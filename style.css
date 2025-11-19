@@ -1,242 +1,323 @@
 /* =============================
+   Custom Properties / Variables
+   ============================= */
+:root {
+    --primary-color: #007bff; /* Blue for call-to-action */
+    --secondary-color: #f5f7fa; /* Light background */
+    --text-color: #333;
+    --white: #ffffff;
+    --transition-speed: 0.3s;
+}
+
+/* =============================
    Global Styles
    ============================= */
 body {
-  margin: 0;
-  font-family: 'Inter', sans-serif;
-  line-height: 1.6;
-  background: #f5f7fa;
-  color: #333;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    background: var(--secondary-color);
+    color: var(--text-color);
 }
 
 h1, h2, h3 {
-  margin: 0;
-  font-weight: 700;
+    margin: 0;
+    font-weight: 700;
 }
 
 p {
-  margin: 0 0 1rem;
+    margin: 0 0 1rem;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: color var(--transition-speed);
 }
 
 /* =============================
-   Hero Section
+   Animations
+   ============================= */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-out forwards;
+}
+
+.fade-in:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.fade-in:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+/* =============================
+   Hero Section (index.html)
    ============================= */
 .hero {
-  position: relative;
-  height: 80vh;
-  background: url('https://images.unsplash.com/photo-1580281658629-1f7c0c48e4f2?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: white;
+    position: relative;
+    height: 80vh;
+    /* Professional Image for Main Page Header */
+    background: url('https://images.unsplash.com/photo-1542744173-8e4277ac7257?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+    background-attachment: fixed; /* For Parallax effect */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--white);
+    overflow: hidden; /* Important for parallax */
 }
 
 .hero .overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.45);
-  backdrop-filter: blur(2px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(2px);
+    z-index: 1;
 }
 
 .hero-content {
-  position: relative;
-  z-index: 2;
-  max-width: 700px;
-  padding: 20px;
-  animation: fadeIn 1.2s ease-in-out;
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+    padding: 20px;
+    animation: fadeIn 1s ease-out forwards;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.hero-content p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
 }
 
 .cta {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 12px 28px;
-  background: #2c7be5;
-  color: white;
-  border-radius: 30px;
-  font-weight: 600;
-  font-size: 1.1rem;
-  text-decoration: none;
-  box-shadow: 0px 8px 20px rgba(44, 123, 229, 0.4);
-  transition: 0.3s ease;
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: var(--primary-color);
+    color: var(--white);
+    border-radius: 5px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: background-color var(--transition-speed), transform var(--transition-speed);
 }
 
 .cta:hover {
-  background: #1a5bbf;
-  box-shadow: 0px 10px 25px rgba(44, 123, 229, 0.6);
-  transform: translateY(-3px);
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: translateY(-2px); /* Subtle lift effect */
 }
+
 
 /* =============================
-   Sections
-   ============================= */
-.section-title {
-  text-align: center;
-  font-size: 2.2rem;
-  margin: 60px 0 20px;
-  position: relative;
-}
-
-.section-title::after {
-  content: "";
-  width: 70px;
-  height: 4px;
-  background: #2c7be5;
-  display: block;
-  margin: 12px auto 0;
-  border-radius: 2px;
-}
-
-/* =============================
-   Modules Grid
-   ============================= */
-.modules-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
-  padding: 20px 40px 60px;
-}
-
-.module-card {
-  background: white;
-  padding: 25px;
-  border-radius: 16px;
-  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.08);
-  transition: 0.3s ease;
-  border-left: 6px solid #2c7be5;
-}
-
-.module-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0px 12px 25px rgba(0, 0, 0, 0.15);
-}
-
-.module-card h3 {
-  font-size: 1.4rem;
-  margin-bottom: 10px;
-}
-
-/* =============================
-   About Section
-   ============================= */
-.about-section {
-  padding: 40px 40px 80px;
-  background: #fff;
-}
-
-/* =============================
-   Footer
-   ============================= */
-footer {
-  text-align: center;
-  padding: 20px;
-  background: #2c7be5;
-  color: white;
-  font-size: 0.95rem;
-}
-
-/* =============================
-   Parallax & Sub-Hero
+   Sub-Hero Section (page-modules.html)
    ============================= */
 .sub-hero {
-  position: relative;
-  height: 50vh;
-  background: url('https://images.unsplash.com/photo-1580281658629-1f7c0c48e4f2?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: white;
-  overflow: hidden;
-}
-
-.parallax {
-  background-attachment: fixed;
+    position: relative;
+    height: 40vh; /* Shorter for sub-page header */
+    /* Professional Image for Modules Page Header */
+    background: url('https://images.unsplash.com/photo-1498075775532-6136d8d0c323?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+    background-attachment: fixed; /* For Parallax effect */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--white);
+    overflow: hidden;
 }
 
 .sub-hero .overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.45);
-  backdrop-filter: blur(2px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Slightly darker overlay for contrast */
+    backdrop-filter: blur(2px);
+    z-index: 1;
 }
 
 .sub-hero-content {
-  position: relative;
-  z-index: 2;
-  max-width: 700px;
-  padding: 20px;
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+    padding: 20px;
+    animation: fadeIn 1s ease-out forwards;
+}
+
+.sub-hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+.sub-hero-content p {
+    font-size: 1.1rem;
+}
+
+/* =============================
+   Content Sections
+   ============================= */
+main {
+    padding: 60px 0;
+}
+
+section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.section-title {
+    font-size: 2.2rem;
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--primary-color);
+    border-bottom: 3px solid rgba(0, 123, 255, 0.2);
+    display: inline-block;
+    padding-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+/* =============================
+   Modules Grid (index.html)
+   ============================= */
+.modules-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.module-card {
+    background: var(--white);
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform var(--transition-speed);
+}
+
+.module-card:hover {
+    transform: translateY(-5px) scale(1.02); /* Professional lift on hover */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.module-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+}
+
+/* =============================
+   Detailed Modules Grid (page-modules.html)
+   ============================= */
+.modules-list-section {
+    padding-top: 20px;
+}
+
+.modules-detail-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 35px;
+    padding: 40px 20px;
+}
+
+.module-detail-card {
+    transition: transform 0.4s ease-out, box-shadow 0.4s ease-out;
+}
+
+.module-detail-card:hover {
+    transform: translateY(-8px) scale(1.01); /* More pronounced lift for detailed cards */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.module-detail-card h3 {
+    font-size: 1.6rem;
+    margin-bottom: 12px;
+}
+
+.module-detail-card p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #555;
 }
 
 /* =============================
    Glassmorphism Cards
    ============================= */
 .glass {
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
-  border-radius: 16px;
-  padding: 25px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-radius: 16px;
+    padding: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 /* =============================
-   Detailed Modules Grid
+   About Section
    ============================= */
-.modules-detail-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 35px;
-  padding: 40px;
+.about-section {
+    background-color: var(--white);
+    text-align: center;
+    padding: 60px 20px;
+    border-top: 1px solid #ddd;
 }
 
-.module-detail-card h3 {
-  font-size: 1.6rem;
-  margin-bottom: 12px;
-}
-
-.module-detail-card p {
-  font-size: 1.05rem;
-  line-height: 1.7;
+.about-section p {
+    max-width: 800px;
+    margin: 0 auto 1rem;
+    font-size: 1.1rem;
+    color: #555;
 }
 
 /* =============================
-   Extra Animations
+   Footer
    ============================= */
-.fade-in {
-  opacity: 0;
-  animation: fadeInSmooth 1.2s ease forwards;
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #333;
+    color: var(--white);
+    font-size: 0.9rem;
 }
-
-@keyframes fadeInSmooth {
-  from {
-    opacity: 0;
-    transform: translateY(15px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 
 /* =============================
-   Animations
+   Responsive Design
    ============================= */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+@media (max-width: 768px) {
+    .hero {
+        height: 60vh;
+    }
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    .hero-content p {
+        font-size: 1rem;
+    }
+    .sub-hero {
+        height: 30vh;
+    }
+    .sub-hero-content h1 {
+        font-size: 2rem;
+    }
+    .modules-detail-grid {
+        grid-template-columns: 1fr;
+    }
 }
