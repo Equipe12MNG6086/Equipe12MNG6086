@@ -555,3 +555,122 @@ footer {
         transform: scale(1); /* Annule l'effet d'agrandissement sur mobile */
     }
 }
+
+
+
+
+/* =============================
+   Module Detail Page Styles
+   ============================= */
+.module-detail-main {
+    display: flex;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    gap: 30px;
+}
+
+.content-wrapper {
+    flex-grow: 1;
+}
+
+.section-title-small {
+    font-size: 1.4rem;
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: 10px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.module-description-box p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+.module-image-container {
+    width: 100%;
+    height: 300px; /* Taille fixe pour l'exemple */
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 30px;
+    border-radius: 12px;
+}
+
+.key-points-list {
+    list-style: none;
+    padding: 0;
+}
+
+.key-points-list li {
+    background: var(--secondary-color);
+    padding: 12px 20px;
+    margin-bottom: 10px;
+    border-left: 5px solid var(--primary-color);
+    border-radius: 6px;
+    font-weight: 500;
+}
+
+/* Sidebar */
+.sidebar-info {
+    width: 300px;
+    flex-shrink: 0;
+}
+
+.info-box, .cta-box {
+    margin-bottom: 30px;
+}
+
+.info-box h3, .cta-box h3 {
+    text-align: center;
+    color: var(--text-color);
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+.info-box ul {
+    list-style: none;
+    padding: 0;
+}
+
+.info-box ul li {
+    padding: 10px 0;
+    border-bottom: 1px dotted #ccc;
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+}
+
+.info-box ul li:last-child {
+    border-bottom: none;
+}
+
+.info-box ul li .icon {
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+
+.secondary-cta {
+    background-color: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    box-shadow: none;
+}
+
+.secondary-cta:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+/* Responsiveness for Detail Page */
+@media (max-width: 900px) {
+    .module-detail-main {
+        flex-direction: column;
+    }
+    .sidebar-info {
+        width: 100%;
+    }
+}
