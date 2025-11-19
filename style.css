@@ -226,7 +226,8 @@ a {
 .section-title {
     font-size: 2rem;
     color: var(--primary-color);
-    margin: 0 auto 40px; 
+    margin: 0 auto 40px;
+    width: fit-content;
     position: relative;
     padding-bottom: 10px;
 }
