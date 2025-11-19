@@ -61,6 +61,16 @@ a {
     animation-delay: 0.4s;
 }
 
+@keyframes spin {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+@keyframes successScale {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
 /* =============================
    Hero Section (index.html)
    ============================= */
@@ -127,6 +137,37 @@ a {
     box-shadow: 0 6px 15px rgba(0, 123, 255, 0.5);
 }
 
+/* STYLES SPÉCIFIQUES À L'ANIMATION DE VALIDATION */
+.submit-button.loading {
+    background-color: #ffc107 !important; /* Jaune/Orange pour le chargement */
+    color: transparent !important; /* Cache le texte du bouton */
+    pointer-events: none;
+    position: relative;
+    box-shadow: none;
+}
+
+.submit-button.loading::before {
+    content: '';
+    display: block;
+    width: 1.2rem;
+    height: 1.2rem;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-top-color: var(--white);
+    border-radius: 50%;
+    animation: spin 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.submit-button.success {
+    background-color: #28a745 !important; /* Vert de succès */
+    color: var(--white) !important;
+    animation: successScale 0.5s ease-out;
+    pointer-events: none;
+    box-shadow: 0 4px 10px rgba(40, 167, 69, 0.6);
+}
 /* =============================
    Sub-Hero Section (page-modules.html)
    ============================= */
