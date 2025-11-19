@@ -9,15 +9,18 @@ fetch('content.json')
     // Modules
     const container = document.getElementById('modules-container');
     container.innerHTML = '';
+    
+    // Définition de la description longue utilisée pour la redirection
+    const descriptionLongueCible = "Ce module présente en profondeur le fonctionnement du réseau de la santé au Québec, incluant l'historique, les missions principales, les CISSS/CIUSSS, les établissements partenaires, ainsi que les contraintes budgétaires et organisationnelles. Vous explorerez également les rôles des gestionnaires dans ce système complexe.";
+
     data.modules.forEach(mod => {
-      const card = document.createElement('a'); // La carte est maintenant un lien (<a>)
+      const card = document.createElement('a'); // La carte est un lien (<a>)
       
-      // Ajout du lien vers la page de détails du module 
-      if (mod.titre === "Introduction au Réseau de la Santé") {
-          card.href = 'module-intro.html';
+      // Vérifie si la description longue correspond à la cible
+      if (mod.descriptionLongue && mod.descriptionLongue.trim() === descriptionLongueCible.trim()) {
+          card.href = 'module-intro.html'; // Lien vers la page de détail
       } else {
-          // Lien par défaut ou vers la page des autres modules (page-modules.html)
-          card.href = 'page-modules.html'; 
+          card.href = 'page-modules.html'; // Lien par défaut
       }
       
       card.className = 'module-card fade-in';
@@ -34,10 +37,8 @@ fetch('content.json')
       pricingContainer.innerHTML = '';
       data.tarifs.forEach(tarif => {
         const card = document.createElement('div');
-        // Ajout de 'popular' pour le style spécial et 'fade-in' pour l'animation
         card.className = `pricing-card fade-in ${tarif.populaire ? 'popular' : ''}`;
         
-        // Construction de la liste de caractéristiques
         const featuresHtml = tarif.caracteristiques.map(feat => `<li>${feat}</li>`).join('');
 
         card.innerHTML = `
@@ -120,7 +121,7 @@ function loadModuleDetail(moduleTitle) {
             
             document.getElementById('module-description-long').textContent = module.descriptionLongue;
             
-            // Simuler la liste des points clés (Ajout manuel pour la présentation)
+            // Simuler la liste des points clés
             const keyPoints = [
                 "Structure et hiérarchie des CISSS/CIUSSS",
                 "Cadre légal et rôle des gestionnaires",
