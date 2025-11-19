@@ -487,13 +487,7 @@ a {
     letter-spacing: 0.5px;
 }
 
-/* Responsive adjustment */
-@media (max-width: 768px) {
-    .pricing-card.popular {
-        transform: scale(1); /* Remove scale on mobile */
-    }
-}
-/* =============================
+===========================
    About Section
    ============================= */
 .about-section {
@@ -552,5 +546,8 @@ footer {
 
     .section-title {
         font-size: 1.8rem;
+    }
+   .pricing-card.popular {
+        transform: scale(1); /* Annule l'effet d'agrandissement sur mobile */
     }
 }
