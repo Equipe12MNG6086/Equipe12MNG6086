@@ -226,7 +226,7 @@ a {
 .section-title {
     font-size: 2rem;
     color: var(--primary-color);
-    margin-bottom: 40px;
+    margin: 0 auto 40px; 
     position: relative;
     padding-bottom: 10px;
 }
@@ -405,13 +405,15 @@ a {
 }
 
 .pricing-card {
-    background: var(--secondary-color);
     padding: 30px;
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
     transition: transform 0.3s, box-shadow 0.3s;
     text-align: center;
     border: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
 }
 
 .pricing-card:hover {
@@ -444,6 +446,7 @@ a {
     padding: 0;
     margin-bottom: 30px;
     text-align: left;
+    flex-grow: 1; 
 }
 
 .pricing-card ul li {
