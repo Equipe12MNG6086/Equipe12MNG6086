@@ -11,13 +11,36 @@ fetch('content.json')
     container.innerHTML = '';
     data.modules.forEach(mod => {
       const card = document.createElement('div');
-      card.className = 'module-card fade-in';
+      // Ajout de la classe 'fade-in' pour l'animation d'apparition
+      card.className = 'module-card fade-in'; 
       card.innerHTML = `
         <h3>${mod.titre}</h3>
         <p>${mod.description}</p>
       `;
       container.appendChild(card);
     });
+
+    // Pricing section (Nouveau)
+    const pricingContainer = document.getElementById('pricing-container');
+    if (pricingContainer && data.tarifs) {
+      pricingContainer.innerHTML = '';
+      data.tarifs.forEach(tarif => {
+        const card = document.createElement('div');
+        // Ajout de la classe 'popular' si le forfait est marqué comme tel
+        card.className = `pricing-card fade-in ${tarif.populaire ? 'popular' : ''}`;
+        
+        // Construction de la liste de caractéristiques
+        const featuresHtml = tarif.caracteristiques.map(feat => `<li>${feat}</li>`).join('');
+
+        card.innerHTML = `
+          <h3>${tarif.titre}</h3>
+          <p class="price">${tarif.prix}</p>
+          <ul>${featuresHtml}</ul>
+          <a href="#inscription" class="cta">Choisir ce forfait</a>
+        `;
+        pricingContainer.appendChild(card);
+      });
+    }
 
     // About section
     document.getElementById('apropos-text').textContent = data.apropos;
@@ -30,7 +53,7 @@ fetch('content.json')
   });
 
 // ====================================================
-// NOUVEAU SCRIPT : GESTION DU FORMULAIRE D'INSCRIPTION AVEC ANIMATION
+// GESTION DU FORMULAIRE D'INSCRIPTION AVEC ANIMATION
 // ====================================================
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -44,7 +67,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const originalText = submitButton.textContent;
             
             // 1. État de chargement (Loading)
-            // Ajout de la classe 'loading' qui masque le texte et affiche le spinner CSS
             submitButton.classList.add('loading');
             submitButton.disabled = true;
 
