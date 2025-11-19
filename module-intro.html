@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title id="module-title">Détails du Module</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+    <header id="module-header" class="sub-hero">
+        <div class="overlay"></div>
+        <div class="sub-hero-content">
+            <h1 id="module-header-title" class="fade-in"></h1>
+            <p id="module-header-subtitle" class="fade-in"></p>
+        </div>
+    </header>
+
+    <main>
+        <section class="module-detail-main">
+            <div class="content-wrapper">
+                
+                <div id="module-image-container" class="module-image-container glass">
+                    </div>
+
+                <div class="module-description-box glass">
+                    <h2 class="section-title-small">Description Complète</h2>
+                    <p id="module-description-long"></p>
+                    
+                    <h2 class="section-title-small">Points Clés Abordés</h2>
+                    <ul id="key-points-list" class="key-points-list">
+                        </ul>
+                </div>
+            </div>
+
+            <aside class="sidebar-info">
+                <div class="info-box glass">
+                    <h3>Informations Pratiques</h3>
+                    <ul>
+                        <li><span class="icon">⏱️</span> **Durée Estimée :** 15 heures</li>
+                        <li><span class="icon">📚</span> **Ressources :** 12 lectures, 4 études de cas</li>
+                        <li><span class="icon">🎓</span> **Certification :** Oui (Après évaluation)</li>
+                        <li><span class="icon">💻</span> **Format :** 100% Asynchrone en ligne</li>
+                    </ul>
+                </div>
+                
+                <div class="cta-box glass">
+                    <h3>Prêt à Commencer ?</h3>
+                    <a href="#inscription" class="cta">S'inscrire à ce module</a>
+                </div>
+            </aside>
+        </section>
+        
+        <section class="next-step-section">
+            <h2 class="section-title">Voir les autres modules</h2>
+            <p>Explorez les autres thèmes de notre programme de formation pour une expertise complète.</p>
+            <a href="page-modules.html" class="cta secondary-cta">Programme Complet</a>
+        </section>
+    </main>
+
+    <footer>
+        <p id="footer-text">Formation en gestion – Québec © 2025</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Appel de la fonction de chargement spécifique au module
+        loadModuleDetail('Introduction au Réseau de la Santé');
+    </script>
+</body>
+</html>
