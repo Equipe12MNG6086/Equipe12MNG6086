@@ -668,6 +668,9 @@ footer {
     background-color: var(--primary-color);
     color: var(--white);
 }
+.next-step-section {
+    padding: 40px 20px 80px;
+    text-align: center;
 
 /* Responsiveness for Detail Page */
 @media (max-width: 900px) {
