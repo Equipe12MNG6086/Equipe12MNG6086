@@ -387,7 +387,112 @@ a {
     color: #6c757d;
     font-size: 0.85rem;
 }
+/* =============================
+   Pricing Section
+   ============================= */
+.pricing-section {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: var(--white); /* Contraste */
+}
 
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1100px;
+    margin: 40px auto 0;
+}
+
+.pricing-card {
+    background: var(--secondary-color);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+.pricing-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.pricing-card h3 {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.pricing-card .price {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 30px;
+}
+
+.pricing-card .price span {
+    display: block;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #6c757d;
+}
+
+.pricing-card ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.pricing-card ul li {
+    padding: 10px 0;
+    border-bottom: 1px dashed #e9ecef;
+    color: var(--text-color);
+    font-size: 1rem;
+}
+
+.pricing-card ul li::before {
+    content: '✓';
+    color: #28a745; /* Green checkmark */
+    font-weight: bold;
+    display: inline-block;
+    width: 1.5em;
+    margin-left: -1.5em;
+}
+
+/* Style for the recommended/popular plan */
+.pricing-card.popular {
+    background-color: var(--white);
+    border: 3px solid var(--primary-color);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+    position: relative;
+    z-index: 10;
+}
+
+.pricing-card.popular::before {
+    content: 'LE PLUS POPULAIRE';
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #28a745; /* Success Green */
+    color: var(--white);
+    padding: 5px 15px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+/* Responsive adjustment */
+@media (max-width: 768px) {
+    .pricing-card.popular {
+        transform: scale(1); /* Remove scale on mobile */
+    }
+}
 /* =============================
    About Section
    ============================= */
