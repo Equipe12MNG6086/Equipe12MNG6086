@@ -1,0 +1,153 @@
+/* =============================
+   Global Styles
+   ============================= */
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  background: #f5f7fa;
+  color: #333;
+}
+
+h1, h2, h3 {
+  margin: 0;
+  font-weight: 700;
+}
+
+p {
+  margin: 0 0 1rem;
+}
+
+/* =============================
+   Hero Section
+   ============================= */
+.hero {
+  position: relative;
+  height: 80vh;
+  background: url('https://images.unsplash.com/photo-1580281658629-1f7c0c48e4f2?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+
+.hero .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(2px);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+  padding: 20px;
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+.cta {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 28px;
+  background: #2c7be5;
+  color: white;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-decoration: none;
+  box-shadow: 0px 8px 20px rgba(44, 123, 229, 0.4);
+  transition: 0.3s ease;
+}
+
+.cta:hover {
+  background: #1a5bbf;
+  box-shadow: 0px 10px 25px rgba(44, 123, 229, 0.6);
+  transform: translateY(-3px);
+}
+
+/* =============================
+   Sections
+   ============================= */
+.section-title {
+  text-align: center;
+  font-size: 2.2rem;
+  margin: 60px 0 20px;
+  position: relative;
+}
+
+.section-title::after {
+  content: "";
+  width: 70px;
+  height: 4px;
+  background: #2c7be5;
+  display: block;
+  margin: 12px auto 0;
+  border-radius: 2px;
+}
+
+/* =============================
+   Modules Grid
+   ============================= */
+.modules-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  padding: 20px 40px 60px;
+}
+
+.module-card {
+  background: white;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.08);
+  transition: 0.3s ease;
+  border-left: 6px solid #2c7be5;
+}
+
+.module-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.module-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+/* =============================
+   About Section
+   ============================= */
+.about-section {
+  padding: 40px 40px 80px;
+  background: #fff;
+}
+
+/* =============================
+   Footer
+   ============================= */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #2c7be5;
+  color: white;
+  font-size: 0.95rem;
+}
+
+/* =============================
+   Animations
+   ============================= */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
