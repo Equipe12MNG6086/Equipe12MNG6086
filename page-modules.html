@@ -10,11 +10,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
 </head>
 <body>
-  <header class="sub-hero parallax">
+  <header class="sub-hero">
     <div class="overlay"></div>
-    <div class="sub-hero-content fade-in">
-      <h1>Modules de Formation</h1>
-      <p>Découvrez l’ensemble des contenus disponibles pour développer vos compétences en gestion.</p>
+    <div class="sub-hero-content">
+      <h1 class="fade-in">Modules de Formation</h1>
+      <p class="fade-in">Découvrez l’ensemble des contenus disponibles pour développer vos compétences en gestion.</p>
     </div>
   </header>
 
@@ -46,9 +46,15 @@
           `;
           container.appendChild(card);
         });
+
+        // Set footer text (optional, but good practice)
+        document.getElementById('footer-text').textContent = data.footer;
+
       })
-      .catch(err => console.error('Erreur:', err));
+      .catch(error => {
+        console.error('Erreur de chargement du contenu détaillé:', error);
+        document.getElementById('modules-detail-container').innerHTML = '<p>Désolé, impossible de charger les détails des modules.</p>';
+      });
   </script>
 </body>
 </html>
-
