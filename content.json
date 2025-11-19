@@ -29,6 +29,40 @@
       "image": "(ajouter une URL d'image ici si désiré)"
     }
   ],
+  "tarifs": [
+    {
+      "titre": "Forfait Basique",
+      "prix": "499 $ / pers.",
+      "caracteristiques": [
+        "Accès 3 mois aux 3 modules fondamentaux",
+        "Exercices interactifs et quiz",
+        "Soutien par courriel (48h)"
+      ],
+      "populaire": false
+    },
+    {
+      "titre": "Forfait Professionnel",
+      "prix": "899 $ / pers.",
+      "caracteristiques": [
+        "Accès 12 mois à tous les 5 modules",
+        "Ateliers de simulation pratiques",
+        "Soutien prioritaire par courriel (24h)",
+        "Certificat de compétence reconnu"
+      ],
+      "populaire": true
+    },
+    {
+      "titre": "Forfait Entreprise",
+      "prix": "Contactez-nous",
+      "caracteristiques": [
+        "Accès illimité pour une équipe (>10 pers.)",
+        "Formation personnalisée sur site",
+        "Consultation stratégique exclusive (1j)",
+        "Rapports de progression d'équipe"
+      ],
+      "populaire": false
+    }
+  ],
   "apropos": "Cette plateforme vise à soutenir les gestionnaires actuels et futurs du réseau de la santé au Québec en offrant une formation claire, accessible et adaptée aux réalités du terrain.",
   "footer": "Formation en gestion – Québec © 2025"
 }
