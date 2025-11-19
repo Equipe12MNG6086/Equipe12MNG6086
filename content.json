@@ -6,19 +6,27 @@
   "modules": [
     {
       "titre": "Introduction au Réseau de la Santé",
-      "description": "Comprendre la structure, les missions et les acteurs clés du système de santé québécois."
+      "description": "Comprendre la structure, les missions et les acteurs clés du système de santé québécois.",
+      "descriptionLongue": "Ce module présente en profondeur le fonctionnement du réseau de la santé au Québec, incluant l'historique, les missions principales, les CISSS/CIUSSS, les établissements partenaires, ainsi que les contraintes budgétaires et organisationnelles. Vous explorerez également les rôles des gestionnaires dans ce système complexe.",
+      "image": "(ajouter une URL d'image ici si désiré)"
     },
     {
       "titre": "Gestion des Ressources Humaines",
-      "description": "Principes essentiels pour gérer efficacement les équipes, les conflits et le climat de travail."
+      "description": "Principes essentiels pour gérer efficacement les équipes, les conflits et le climat de travail.",
+      "descriptionLongue": "Dans ce module, vous apprendrez les fondements de la gestion du personnel dans un contexte de santé : dotation, mobilisation, gestion des conflits, communication interne, performance, prévention du stress et rétention du personnel. Le module inclut des exemples pratiques adaptés au réseau québécois.",
+      "image": "(ajouter une URL d'image ici si désiré)"
     },
     {
       "titre": "Leadership et Prise de Décision",
-      "description": "Développer un leadership mobilisateur et prendre des décisions éclairées dans un contexte complexe."
+      "description": "Développer un leadership mobilisateur et prendre des décisions éclairées dans un contexte complexe.",
+      "descriptionLongue": "Ce module couvre les styles de leadership, les approches de gestion collaborative, la prise de décision basée sur les données, et les stratégies pour inspirer et mobiliser les équipes. Des scénarios réalistes vous permettront de vous exercer à la prise de décision sous pression.",
+      "image": "(ajouter une URL d'image ici si désiré)"
     },
     {
       "titre": "Qualité des Soins et Sécurité",
-      "description": "Méthodes pour assurer l’amélioration continue et maintenir des standards élevés de qualité."
+      "description": "Méthodes pour assurer l’amélioration continue et maintenir des standards élevés de qualité.",
+      "descriptionLongue": "Vous étudierez les principes de la gestion de la qualité, les indicateurs de performance, l’amélioration continue, et les protocoles de sécurité des patients. Le module inclut des exemples d’indicateurs utilisés au Québec et des démarches d'amélioration concrètes.",
+      "image": "(ajouter une URL d'image ici si désiré)"
     }
   ],
   "apropos": "Cette plateforme vise à soutenir les gestionnaires actuels et futurs du réseau de la santé au Québec en offrant une formation claire, accessible et adaptée aux réalités du terrain.",
