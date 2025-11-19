@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Modules de Formation – Gestionnaires en Santé</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header class="sub-hero parallax">
+    <div class="overlay"></div>
+    <div class="sub-hero-content fade-in">
+      <h1>Modules de Formation</h1>
+      <p>Découvrez l’ensemble des contenus disponibles pour développer vos compétences en gestion.</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="modules-list-section">
+      <h2 class="section-title">Contenu des Modules</h2>
+      <div id="modules-detail-container" class="modules-detail-grid"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p id="footer-text">Formation en gestion – Québec © 2025</p>
+  </footer>
+
+  <script>
+    // Load module content from content.json
+    fetch('content.json')
+      .then(res => res.json())
+      .then(data => {
+        const container = document.getElementById('modules-detail-container');
+        container.innerHTML = '';
+
+        data.modules.forEach(mod => {
+          const card = document.createElement('div');
+          card.className = 'module-detail-card glass fade-in';
+          card.innerHTML = `
+            <h3>${mod.titre}</h3>
+            <p>${mod.descriptionLongue}</p>
+          `;
+          container.appendChild(card);
+        });
+      })
+      .catch(err => console.error('Erreur:', err));
+  </script>
+</body>
+</html>
