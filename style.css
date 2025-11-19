@@ -275,6 +275,79 @@ a {
 }
 
 /* =============================
+   Subscription Section (Formulaire)
+   ============================= */
+.subscribe-section {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: var(--secondary-color); /* Fond clair pour contraster avec les sections Image */
+}
+
+.form-container {
+    max-width: 600px;
+    margin: 40px auto 0;
+    padding: 40px;
+    /* Le style .glass (background flou) s'applique ici */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    background: var(--white); /* Remplacer le glass par du blanc pur pour la présentation */
+    border: 1px solid #ddd;
+    border-radius: 12px;
+}
+
+/* Introduction du formulaire */
+.form-intro {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    color: var(--text-color);
+}
+
+/* Groupement label + input */
+.form-group {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--primary-color);
+    font-size: 0.95rem;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box; /* S'assure que le padding est inclus dans la largeur */
+    font-size: 1rem;
+    transition: border-color var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.form-group input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
+    outline: none;
+}
+
+/* Style spécifique pour le bouton CTA du formulaire */
+.submit-button {
+    width: 100%;
+    margin-top: 10px;
+    font-size: 1.1rem;
+    padding: 15px 0;
+}
+
+/* Texte de bas de formulaire (Confidentialité) */
+#subscription-form small {
+    display: block;
+    margin-top: 15px;
+    color: #6c757d;
+    font-size: 0.85rem;
+}
+
+/* =============================
    About Section
    ============================= */
 .about-section {
