@@ -134,7 +134,7 @@ a {
     position: relative;
     height: 40vh; /* Plus court pour l'en-tête de la sous-page */
     /* NOUVELLE IMAGE : Bureau d'hôpital moderne */
-    background: url('https://images.unsplash.com/photo-1584824486509-c9842f21132a?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+    background: url('https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg') center/cover no-repeat;
     background-attachment: fixed;
     display: flex;
     justify-content: center;
