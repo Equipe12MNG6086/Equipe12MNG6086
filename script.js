@@ -10,9 +10,17 @@ fetch('content.json')
     const container = document.getElementById('modules-container');
     container.innerHTML = '';
     data.modules.forEach(mod => {
-      const card = document.createElement('div');
-      // Ajout de la classe 'fade-in' pour l'animation d'apparition
-      card.className = 'module-card fade-in'; 
+      const card = document.createElement('a'); // La carte est maintenant un lien (<a>)
+      
+      // Ajout du lien vers la page de détails du module 
+      if (mod.titre === "Introduction au Réseau de la Santé") {
+          card.href = 'module-intro.html';
+      } else {
+          // Lien par défaut ou vers la page des autres modules (page-modules.html)
+          card.href = 'page-modules.html'; 
+      }
+      
+      card.className = 'module-card fade-in';
       card.innerHTML = `
         <h3>${mod.titre}</h3>
         <p>${mod.description}</p>
@@ -20,13 +28,13 @@ fetch('content.json')
       container.appendChild(card);
     });
 
-    // Pricing section (Nouveau)
+    // Pricing section
     const pricingContainer = document.getElementById('pricing-container');
     if (pricingContainer && data.tarifs) {
       pricingContainer.innerHTML = '';
       data.tarifs.forEach(tarif => {
         const card = document.createElement('div');
-        // Ajout de la classe 'popular' si le forfait est marqué comme tel
+        // Ajout de 'popular' pour le style spécial et 'fade-in' pour l'animation
         card.className = `pricing-card fade-in ${tarif.populaire ? 'popular' : ''}`;
         
         // Construction de la liste de caractéristiques
@@ -88,3 +96,53 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+// ====================================================
+// LOGIQUE DE CHARGEMENT DES PAGES DE DÉTAILS (pour module-intro.html)
+// ====================================================
+
+function loadModuleDetail(moduleTitle) {
+    fetch('content.json')
+        .then(response => response.json())
+        .then(data => {
+            // Trouver le module spécifique
+            const module = data.modules.find(m => m.titre === moduleTitle);
+
+            if (!module) {
+                document.getElementById('module-header-title').textContent = "Module non trouvé";
+                return;
+            }
+
+            // Mettre à jour les éléments de la page
+            document.getElementById('module-title').textContent = module.titre;
+            document.getElementById('module-header-title').textContent = module.titre;
+            document.getElementById('module-header-subtitle').textContent = module.description;
+            
+            document.getElementById('module-description-long').textContent = module.descriptionLongue;
+            
+            // Simuler la liste des points clés (Ajout manuel pour la présentation)
+            const keyPoints = [
+                "Structure et hiérarchie des CISSS/CIUSSS",
+                "Cadre légal et rôle des gestionnaires",
+                "Défis budgétaires et priorités organisationnelles",
+                "Cartographie des acteurs clés (ministère, agences, etc.)"
+            ];
+
+            const list = document.getElementById('key-points-list');
+            list.innerHTML = keyPoints.map(point => `<li>${point}</li>`).join('');
+            
+            // Afficher l'image
+            const imageContainer = document.getElementById('module-image-container');
+            if (module.image && module.image.startsWith('http')) {
+                imageContainer.style.backgroundImage = `url('${module.image}')`;
+            } else {
+                imageContainer.style.backgroundImage = `url('placeholder-reseau-sante.jpg')`; 
+            }
+
+            // Footer
+            document.getElementById('footer-text').textContent = data.footer;
+        })
+        .catch(error => {
+            console.error('Erreur de chargement du module:', error);
+        });
+}
