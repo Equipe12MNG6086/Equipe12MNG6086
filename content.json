@@ -1,0 +1,26 @@
+{
+  "hero": {
+    "title": "Formation des Gestionnaires en Santé du Québec",
+    "subtitle": "Renforcez vos compétences en gestion, leadership et organisation dans le réseau de la santé."
+  },
+  "modules": [
+    {
+      "titre": "Introduction au Réseau de la Santé",
+      "description": "Comprendre la structure, les missions et les acteurs clés du système de santé québécois."
+    },
+    {
+      "titre": "Gestion des Ressources Humaines",
+      "description": "Principes essentiels pour gérer efficacement les équipes, les conflits et le climat de travail."
+    },
+    {
+      "titre": "Leadership et Prise de Décision",
+      "description": "Développer un leadership mobilisateur et prendre des décisions éclairées dans un contexte complexe."
+    },
+    {
+      "titre": "Qualité des Soins et Sécurité",
+      "description": "Méthodes pour assurer l’amélioration continue et maintenir des standards élevés de qualité."
+    }
+  ],
+  "apropos": "Cette plateforme vise à soutenir les gestionnaires actuels et futurs du réseau de la santé au Québec en offrant une formation claire, accessible et adaptée aux réalités du terrain.",
+  "footer": "Formation en gestion – Québec © 2025"
+}
