@@ -12,7 +12,7 @@ fetch('content.json')
     
     // Définition des modules qui auront une page de détail dédiée (module-intro.html)
     const detailedModules = [
-        "Objectifs de la formation", 
+        "Structure de la formation", 
         "Module 1: Se connaître comme nouveau gestionnaire"
     ];
 
