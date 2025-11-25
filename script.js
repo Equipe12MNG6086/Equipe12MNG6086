@@ -141,7 +141,7 @@ function loadModuleDetail(moduleTitle) {
                 ];
             } else if (moduleTitle === "Module 1: Se connaître comme nouveau gestionnaire") {
                  keyPoints = [
-                    "1. Présentation théorique <li> État du réseau de la santé : pénurie, surcharge, restructurations <li> Les défis spécifiques du rôle de gestionnaire  <li> Les 7 comportements clés d’un leader efficace et comment le reconnaître  <li> Notions de stress (Modèle Demande- Ressource) <li> Comprendre les types de gestion dans le réseau de la santé",
+                    "1.Présentation théorique: <li> État du réseau de la santé: pénurie, surcharge, restructurations <li> Les défis spécifiques du rôle de gestionnaire <li> Les 7 comportements clés d’un leader efficace et comment le reconnaître <li> Notions de stress (Modèle Demande- Ressource) <li> Comprendre les types de gestion dans le réseau de la santé",
                     "Identification des forces et des zones de vulnérabilité personnelles",
                     "Reconnaissance des signes de stress/épuisement chez soi et l'équipe",
                     "Développement d'une posture de leadership saine et mobilisatrice"
