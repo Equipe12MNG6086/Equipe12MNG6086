@@ -56,11 +56,11 @@
       "populaire": true
     },
     {
-      "titre": "Forfait Entreprise",
+      "titre": "Forfait Personnalisé",
       "prix": "Contactez-nous",
       "caracteristiques": [
-        "Accès illimité pour une équipe (>10 pers.)",
-        "Formation personnalisée sur site",
+        "Prix selon le nombre de personnes",
+        "Même avantages que le Forfait de Groupe",
         "Consultation stratégique exclusive (1j)",
         "Rapports de progression d'équipe"
       ],
