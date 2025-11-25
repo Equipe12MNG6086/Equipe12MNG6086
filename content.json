@@ -5,9 +5,21 @@
   },
   "modules": [
     {
-      "titre": "Structure de la formation",
+      "titre": "Clientèle visé par la Formation",
+      "description": "Les gestionnaires en santé du Québec <li> Voir plus... ",
+      "descriptionLongue": "Qui sont les personnes visées par la formation ? <li> Gestionnaire de la santé - secteur publique ​<li> Milieu de travail (CHSLD, hôpital, CLSC, réadaptation, etc.)​ <li> Gestionnaires cliniques nouvellement en poste de premier niveau (moins de 2 ans)​ <li> Souvent viennent d’un rôle professionnel (infirmier, travailleur social, etc.)​ <li> Haut niveau de pression et charge de travail élevé",
+      "image": "(ajouter une URL d'image ici si désiré)"
+    }
+    {
+      "titre": "Structure de la Formation",
+      "description": "Durée totale de 7h30. <li> Formation rapide et efficace.​ <li> Format présentiel",
+      "descriptionLongue": "Ce module est consacré à la motivation: un élément central dans un contexte où les équipes sont fragilisées, fatiguées et confrontées à une charge émotionnelle élevée. Les participants découvrent les leviers de la motivation intrinsèque, apprennent à reconnaître les facteurs qui démobilisent et développent des stratégies pour inspirer, soutenir et reconnecter leurs employés à un sens commun. À travers des jeux de rôle, des mises en situation et des discussions guidées, ils pratiquent des techniques de communication qui favorisent la confiance, la clarté et l’empathie. Ils apprennent également à partager une vision mobilisatrice et à renforcer leur leadership de proximité. Ce module vise à donner aux gestionnaires des outils concrets pour maintenir la santé psychologique de leurs équipes et bâtir un climat de travail plus humain, même en période de tension.",
+      "image": "(ajouter une URL d'image ici si désiré)"
+    }
+    {
+      "titre": "Objectifs de la formation",
       "description": "Assurer la productivité d’une Équipe​, Gérer son stress et son temps, Travailler efficacement​",
-      "descriptionLongue": "Cette formation va vous permettre de : Gérer son temps plus efficacement, Prioriser ses actions selon l’urgence et l’importance, Prévenir l'épuisement professionnel, Mobiliser son équipe dans un contexte de changements et de pénurie de main d’œuvre​, Communiquer efficacement en contexte de pression, Renforcer la relation de confiance avec les membres de son équipe​",
+      "descriptionLongue": "Cette formation va vous permettre de : <li> Gérer son temps plus efficacement <li> Prioriser ses actions selon l’urgence et l’importance <li> Prévenir l'épuisement professionnel <li> Mobiliser son équipe dans un contexte de changements et de pénurie de main d’œuvre​ <li> Communiquer efficacement en contexte de pression <li> Renforcer la relation de confiance avec les membres de son équipe​",
       "image": "(ajouter une URL d'image ici si désiré)"
     },
     {
@@ -28,12 +40,6 @@
       "descriptionLongue": "<li> Ce module est consacré à la motivation: un élément central dans un contexte où les équipes sont fragilisées, fatiguées et confrontées à une charge émotionnelle élevée. Les participants découvrent les leviers de la motivation intrinsèque, apprennent à reconnaître les facteurs qui démobilisent et développent des stratégies pour inspirer, soutenir et reconnecter leurs employés à un sens commun. <li> <li> À travers des jeux de rôle, des mises en situation et des discussions guidées, ils pratiquent des techniques de communication qui favorisent la confiance, la clarté et l’empathie. Ils apprennent également à partager une vision mobilisatrice et à renforcer leur leadership de proximité. <li> <li> Ce module vise à donner aux gestionnaires des outils concrets pour maintenir la santé psychologique de leurs équipes et bâtir un climat de travail plus humain, même en période de tension.",
       "image": "(ajouter une URL d'image ici si désiré)"
     },
-    {
-      "titre": "Module 4: Maintenir sa motivation et celle de son équipe",
-      "description": "Mobiliser, inspirer et soutenir en contexte de pénurie",
-      "descriptionLongue": "Ce module est consacré à la motivation: un élément central dans un contexte où les équipes sont fragilisées, fatiguées et confrontées à une charge émotionnelle élevée. Les participants découvrent les leviers de la motivation intrinsèque, apprennent à reconnaître les facteurs qui démobilisent et développent des stratégies pour inspirer, soutenir et reconnecter leurs employés à un sens commun. À travers des jeux de rôle, des mises en situation et des discussions guidées, ils pratiquent des techniques de communication qui favorisent la confiance, la clarté et l’empathie. Ils apprennent également à partager une vision mobilisatrice et à renforcer leur leadership de proximité. Ce module vise à donner aux gestionnaires des outils concrets pour maintenir la santé psychologique de leurs équipes et bâtir un climat de travail plus humain, même en période de tension.",
-      "image": "(ajouter une URL d'image ici si désiré)"
-    }
   ],
   "tarifs": [
     {
