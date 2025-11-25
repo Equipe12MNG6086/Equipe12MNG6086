@@ -66,8 +66,17 @@
 
     <script src="script.js"></script>
     <script>
-        // Appel de la fonction de chargement spécifique au module
-        loadModuleDetail('Objectifs de la formation');
+        // Lecture dynamique du paramètre 'module' de l'URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const moduleTitle = urlParams.get('module');
+
+        // Charger le module correspondant ou utiliser un défaut si le paramètre est manquant
+        if (moduleTitle) {
+            loadModuleDetail(moduleTitle);
+        } else {
+            // Option: Charger un module par défaut si l'URL est accédée directement sans paramètre
+            loadModuleDetail('Objectifs de la formation'); 
+        }
     </script>
 </body>
 </html>
