@@ -10,17 +10,21 @@ fetch('content.json')
     const container = document.getElementById('modules-container');
     container.innerHTML = '';
     
-    // Définition de la description longue utilisée pour la redirection
-    const descriptionLongueCible = "Ce module présente en profondeur le fonctionnement du réseau de la santé au Québec, incluant l'historique, les missions principales, les CISSS/CIUSSS, les établissements partenaires, ainsi que les contraintes budgétaires et organisationnelles. Vous explorerez également les rôles des gestionnaires dans ce système complexe.";
+    // Définition des modules qui auront une page de détail dédiée (module-intro.html)
+    const detailedModules = [
+        "Objectifs de la formation", 
+        "Module 1: Se connaître comme nouveau gestionnaire"
+    ];
 
     data.modules.forEach(mod => {
       const card = document.createElement('a'); // La carte est un lien (<a>)
       
-      // Vérifie si la description longue correspond à la cible
-      if (mod.descriptionLongue && mod.descriptionLongue.trim() === descriptionLongueCible.trim()) {
-          card.href = 'module-intro.html'; // Lien vers la page de détail
+      // Vérifie si le titre correspond à l'un des modules détaillés
+      if (detailedModules.includes(mod.titre)) {
+          // Utilise un paramètre d'URL pour indiquer quel module charger
+          card.href = `module-intro.html?module=${encodeURIComponent(mod.titre)}`; 
       } else {
-          card.href = 'page-modules.html'; // Lien par défaut
+          card.href = 'page-modules.html'; // Lien par défaut vers la liste de tous les modules
       }
       
       card.className = 'module-card fade-in';
@@ -111,6 +115,9 @@ function loadModuleDetail(moduleTitle) {
 
             if (!module) {
                 document.getElementById('module-header-title').textContent = "Module non trouvé";
+                document.getElementById('module-header-subtitle').textContent = "Le contenu de ce module n'est pas disponible.";
+                document.getElementById('module-description-long').textContent = "Veuillez vérifier l'URL ou retourner à la liste des modules.";
+                document.getElementById('key-points-list').innerHTML = '';
                 return;
             }
 
@@ -121,13 +128,31 @@ function loadModuleDetail(moduleTitle) {
             
             document.getElementById('module-description-long').textContent = module.descriptionLongue;
             
-            // Simuler la liste des points clés
-            const keyPoints = [
-                "Structure et hiérarchie des CISSS/CIUSSS",
-                "Cadre légal et rôle des gestionnaires",
-                "Défis budgétaires et priorités organisationnelles",
-                "Cartographie des acteurs clés (ministère, agences, etc.)"
-            ];
+            // Définir les points clés spécifiques à chaque module
+            let keyPoints = [];
+            
+            if (moduleTitle === "Objectifs de la formation") {
+                 keyPoints = [
+                    "Gestion du temps et des priorités (Urgence vs. Importance)",
+                    "Prévention de l'épuisement professionnel (Stress et saturation)",
+                    "Mobilisation d'équipe face au changement et à la pénurie",
+                    "Communication efficace en contexte de pression",
+                    "Renforcement de la confiance d'équipe"
+                ];
+            } else if (moduleTitle === "Module 1: Se connaître comme nouveau gestionnaire") {
+                 keyPoints = [
+                    "Rôle du gestionnaire dans le réseau de la santé (RSSS)",
+                    "Identification des forces et des zones de vulnérabilité personnelles",
+                    "Reconnaissance des signes de stress/épuisement chez soi et l'équipe",
+                    "Développement d'une posture de leadership saine et mobilisatrice"
+                ];
+            } else {
+                // Défaut pour les autres modules
+                 keyPoints = [
+                    "Points clés en cours de préparation pour ce module."
+                ];
+            }
+
 
             const list = document.getElementById('key-points-list');
             list.innerHTML = keyPoints.map(point => `<li>${point}</li>`).join('');
@@ -137,7 +162,15 @@ function loadModuleDetail(moduleTitle) {
             if (module.image && module.image.startsWith('http')) {
                 imageContainer.style.backgroundImage = `url('${module.image}')`;
             } else {
-                imageContainer.style.backgroundImage = `url('placeholder-reseau-sante.jpg')`; 
+                // Image de remplacement basée sur le module
+                let placeholderImage = 'placeholder-reseau-sante.jpg';
+                if (moduleTitle.includes('Module 1')) {
+                     placeholderImage = 'placeholder-leadership.jpg';
+                } else if (moduleTitle.includes('Objectifs')) {
+                     placeholderImage = 'placeholder-goals.jpg';
+                }
+                
+                imageContainer.style.backgroundImage = `url('${placeholderImage}')`; 
             }
 
             // Footer
@@ -145,5 +178,6 @@ function loadModuleDetail(moduleTitle) {
         })
         .catch(error => {
             console.error('Erreur de chargement du module:', error);
+            document.getElementById('module-header-title').textContent = "Erreur de chargement";
         });
 }
