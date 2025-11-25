@@ -31,12 +31,14 @@
   ],
   "tarifs": [
     {
-      "titre": "Forfait Basique",
-      "prix": "499 $ / pers.",
+      "titre": "Forfait Individuel",
+      "prix": "250 $ / pers.",
       "caracteristiques": [
-        "Accès 3 mois aux 3 modules fondamentaux",
-        "Exercices interactifs et quiz",
-        "Soutien par courriel (48h)"
+        "Pour un groupe de 20 personnnes",
+        "1 journée de formation (7h30)",
+        "Animation par 1 formateur en salle",
+        "Ateliers de simulation pratiques",
+        "Exercices interactifs et quiz"
       ],
       "populaire": false
     },
