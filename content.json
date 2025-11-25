@@ -43,13 +43,15 @@
       "populaire": false
     },
     {
-      "titre": "Forfait Professionnel",
-      "prix": "899 $ / pers.",
+      "titre": "Forfait de Groupe",
+      "prix": "5000$",
       "caracteristiques": [
-        "Accès 12 mois à tous les 5 modules",
+        "Accès illimité pour une équipe (>20 pers.)",
+        "1 journée de formation (7h30)",
+        "Animation par 1 formateur en salle",
         "Ateliers de simulation pratiques",
-        "Soutien prioritaire par courriel (24h)",
-        "Certificat de compétence reconnu"
+        "Exercices interactifs et quiz",
+        "Déplacement de notre formateur dans votre organisation"
       ],
       "populaire": true
     },
