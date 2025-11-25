@@ -131,7 +131,7 @@ function loadModuleDetail(moduleTitle) {
             // Définir les points clés spécifiques à chaque module
             let keyPoints = [];
             
-            if (moduleTitle === "Objectifs de la formation") {
+            if (moduleTitle === "Structure de la formation") {
                  keyPoints = [
                     "Gestion du temps et des priorités (Urgence vs. Importance)",
                     "Prévention de l'épuisement professionnel (Stress et saturation)",
