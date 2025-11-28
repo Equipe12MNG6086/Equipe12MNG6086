@@ -61,385 +61,225 @@ a {
     animation-delay: 0.4s;
 }
 
-@keyframes spin {
-    0% { transform: translate(-50%, -50%) rotate(0deg); }
-    100% { transform: translate(-50%, -50%) rotate(360deg); }
-}
-@keyframes successScale {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-    100% { transform: scale(1); }
-}
-
 /* =============================
-   Hero Section (index.html)
+   Header & Hero Styles
    ============================= */
-.hero {
+.hero, .sub-hero {
     position: relative;
-    height: 80vh;
-    /* NOUVELLE IMAGE : Collaboration / Gestion en Santé */
-    background: url('https://images.pexels.com/photos/4344860/pexels-photo-4344860.jpeg') center/cover no-repeat;
-    background-attachment: fixed; /* Effet parallax */
+    height: 400px; 
+    background: url('https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2') center/cover no-repeat;
     display: flex;
-    justify-content: center;
     align-items: center;
-    text-align: center;
+    justify-content: center;
     color: var(--white);
-    overflow: hidden;
+    text-align: center;
 }
 
-.hero .overlay {
+.overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Assombrit l'image */
-    backdrop-filter: blur(2px); /* Ajoute un léger flou */
+    background-color: rgba(0, 0, 0, 0.5);
     z-index: 1;
 }
 
-.hero .hero-content {
+.hero-content, .sub-hero-content {
+    position: relative;
     z-index: 2;
-    max-width: 900px;
-    padding: 0 20px;
+    padding: 20px;
+    max-width: 800px;
 }
 
-.hero h1 {
-    font-size: clamp(2.5rem, 5vw, 4rem);
-    margin-bottom: 0.5rem;
-    font-weight: 800;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 10px;
 }
 
-.hero p {
-    font-size: clamp(1.2rem, 2.5vw, 1.5rem);
-    margin-bottom: 30px;
+.hero-content p {
+    font-size: 1.5rem;
     font-weight: 300;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    margin-bottom: 30px;
 }
 
+.sub-hero {
+    height: 250px;
+}
+
+.sub-hero-content h1 {
+    font-size: 2.5rem;
+}
+
+.sub-hero-content p {
+    font-size: 1.1rem;
+}
+
+/* =============================
+   Call to Action (CTA) Buttons
+   ============================= */
 .cta {
     display: inline-block;
-    padding: 12px 30px;
+    padding: 12px 25px;
     background-color: var(--primary-color);
     color: var(--white);
-    border-radius: 50px;
+    border-radius: 8px;
     font-weight: 600;
-    letter-spacing: 0.5px;
-    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.4);
-    transition: background-color var(--transition-speed), transform var(--transition-speed), box-shadow var(--transition-speed);
+    transition: background-color var(--transition-speed), transform var(--transition-speed);
+    border: none;
+    cursor: pointer;
+    text-align: center;
 }
 
 .cta:hover {
     background-color: #0056b3;
     transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(0, 123, 255, 0.5);
 }
 
-/* STYLES SPÉCIFIQUES À L'ANIMATION DE VALIDATION */
-.submit-button.loading {
-    background-color: #ffc107 !important; /* Jaune/Orange pour le chargement */
-    color: transparent !important; /* Cache le texte du bouton */
-    pointer-events: none;
-    position: relative;
-    box-shadow: none;
+.secondary-cta {
+    background-color: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
 }
 
-.submit-button.loading::before {
-    content: '';
-    display: block;
-    width: 1.2rem;
-    height: 1.2rem;
-    border: 3px solid rgba(255, 255, 255, 0.3);
-    border-top-color: var(--white);
-    border-radius: 50%;
-    animation: spin 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.submit-button.success {
-    background-color: #28a745 !important; /* Vert de succès */
-    color: var(--white) !important;
-    animation: successScale 0.5s ease-out;
-    pointer-events: none;
-    box-shadow: 0 4px 10px rgba(40, 167, 69, 0.6);
-}
-/* =============================
-   Sub-Hero Section (page-modules.html)
-   ============================= */
-.sub-hero {
-    position: relative;
-    height: 40vh; /* Plus court pour l'en-tête de la sous-page */
-    /* NOUVELLE IMAGE : Bureau d'hôpital moderne */
-    background: url('https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg') center/cover no-repeat;
-    background-attachment: fixed;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+.secondary-cta:hover {
+    background-color: var(--primary-color);
     color: var(--white);
+}
+
+/* Form Submit Button Loading/Success State */
+.submit-button {
+    position: relative;
     overflow: hidden;
 }
 
-.sub-hero .overlay {
-    /* Style conservé du hero, mais peut être ajusté pour être moins opaque */
+.submit-button.loading::after {
+    content: '... Chargement';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.4); /* Légèrement moins opaque */
-    backdrop-filter: blur(1.5px);
-    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #0056b3;
+    animation: pulse 1s infinite;
 }
 
-.sub-hero .sub-hero-content {
-    z-index: 2;
-    max-width: 900px;
-    padding: 0 20px;
+.submit-button.success {
+    background-color: #28a745;
 }
 
-.sub-hero h1 {
-    font-size: 3rem;
-    margin-bottom: 0.5rem;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-.sub-hero p {
-    font-size: 1.2rem;
-    font-weight: 300;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+@keyframes pulse {
+    0% { opacity: 0.8; }
+    50% { opacity: 1; }
+    100% { opacity: 0.8; }
 }
 
 /* =============================
-   Module/Content Sections
+   Main Content Layout
    ============================= */
-.modules-section, .modules-list-section {
+main {
+    padding-bottom: 60px;
+}
+
+section {
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 60px 20px;
-    text-align: center;
 }
 
 .section-title {
+    text-align: center;
     font-size: 2rem;
-    color: var(--primary-color);
-    margin: 0 auto 40px;
-    width: fit-content;
-    position: relative;
-    padding-bottom: 10px;
+    color: var(--text-color);
+    margin-bottom: 40px;
 }
 
-.section-title::after {
-    content: '';
-    display: block;
-    width: 60px;
-    height: 4px;
-    background-color: var(--primary-color);
-    margin: 10px auto 0;
-    border-radius: 2px;
+.glass {
+    background-color: rgba(255, 255, 255, 0.9); 
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-/* Grille des modules (index.html) */
+/* =============================
+   Modules Section
+   ============================= */
 .modules-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
-    max-width: 1200px;
-    margin: 0 auto;
 }
 
 .module-card {
+    display: block;
+    padding: 30px;
     background: var(--white);
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
-    text-align: left;
     border-left: 5px solid var(--primary-color);
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .module-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
 }
 
 .module-card h3 {
     font-size: 1.4rem;
-    margin-bottom: 10px;
     color: var(--primary-color);
+    margin-bottom: 10px;
 }
 
 .module-card p {
-    font-size: 0.9rem;
-    color: #555;
-    margin: 0;
-}
-
-/* Grille des détails des modules (page-modules.html) */
-.modules-detail-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 25px;
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-.module-detail-card {
-    text-align: left;
-    border-left: 8px solid var(--primary-color);
-}
-
-.module-detail-card h3 {
-    font-size: 1.6rem;
-    margin-bottom: 12px;
-}
-
-.module-detail-card p {
-    font-size: 0.95rem;
-    line-height: 1.5;
-    color: #555;
-}
-
-/* =============================
-   Glassmorphism Cards
-   ============================= */
-.glass {
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-    border-radius: 16px;
-    padding: 25px;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-}
-
-/* =============================
-   Subscription Section (Formulaire)
-   ============================= */
-.subscribe-section {
-    padding: 60px 20px;
-    text-align: center;
-    background-color: var(--secondary-color); /* Fond clair pour contraster avec les sections Image */
-}
-
-.form-container {
-    max-width: 600px;
-    margin: 40px auto 0;
-    padding: 40px;
-    /* Le style .glass (background flou) s'applique ici */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    background: var(--white); /* Remplacer le glass par du blanc pur pour la présentation */
-    border: 1px solid #ddd;
-    border-radius: 12px;
-}
-
-/* Introduction du formulaire */
-.form-intro {
-    font-size: 1.1rem;
-    margin-bottom: 30px;
-    color: var(--text-color);
-}
-
-/* Groupement label + input */
-.form-group {
-    text-align: left;
-    margin-bottom: 20px;
-}
-
-.form-group label {
-    display: block;
-    font-weight: 600;
-    margin-bottom: 8px;
-    color: var(--primary-color);
+    color: #666;
     font-size: 0.95rem;
 }
 
-.form-group input {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    box-sizing: border-box; /* S'assure que le padding est inclus dans la largeur */
-    font-size: 1rem;
-    transition: border-color var(--transition-speed), box-shadow var(--transition-speed);
-}
-
-.form-group input:focus {
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
-    outline: none;
-}
-
-/* Style spécifique pour le bouton CTA du formulaire */
-.submit-button {
-    width: 100%;
-    margin-top: 10px;
-    font-size: 1.1rem;
-    padding: 15px 0;
-}
-
-/* Texte de bas de formulaire (Confidentialité) */
-#subscription-form small {
-    display: block;
-    margin-top: 15px;
-    color: #6c757d;
-    font-size: 0.85rem;
-}
 /* =============================
    Pricing Section
    ============================= */
-.pricing-section {
-    padding: 60px 20px;
-    text-align: center;
-    background-color: var(--white); /* Contraste */
-}
-
 .pricing-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
-    max-width: 1100px;
-    margin: 40px auto 0;
+    text-align: center;
 }
 
 .pricing-card {
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s, box-shadow 0.3s;
-    text-align: center;
-    border: 1px solid #ddd;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; 
+    padding: 40px;
+    background: var(--white);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.pricing-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+.pricing-card.popular {
+    border: 3px solid var(--primary-color);
+    box-shadow: 0 0 20px rgba(0, 123, 255, 0.3);
+    transform: scale(1.03);
+}
+
+.pricing-card.popular:hover {
+    transform: scale(1.05);
 }
 
 .pricing-card h3 {
     font-size: 1.8rem;
-    color: var(--primary-color);
-    margin-bottom: 20px;
+    color: var(--text-color);
+    margin-bottom: 15px;
 }
 
 .pricing-card .price {
     font-size: 2.5rem;
     font-weight: 700;
-    color: var(--text-color);
+    color: var(--primary-color);
     margin-bottom: 30px;
-}
-
-.pricing-card .price span {
-    display: block;
-    font-size: 1rem;
-    font-weight: 400;
-    color: #6c757d;
 }
 
 .pricing-card ul {
@@ -447,117 +287,119 @@ a {
     padding: 0;
     margin-bottom: 30px;
     text-align: left;
-    flex-grow: 1; 
 }
 
 .pricing-card ul li {
     padding: 10px 0;
-    border-bottom: 1px dashed #e9ecef;
-    color: var(--text-color);
+    border-bottom: 1px dotted #ccc;
     font-size: 1rem;
+    color: #555;
+    padding-left: 20px;
+    position: relative;
 }
 
 .pricing-card ul li::before {
-    content: '✓';
-    color: #28a745; /* Green checkmark */
-    font-weight: bold;
-    display: inline-block;
-    width: 1.5em;
-    margin-left: -1.5em;
-}
-
-/* Style for the recommended/popular plan */
-.pricing-card.popular {
-    background-color: var(--white);
-    border: 3px solid var(--primary-color);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    transform: scale(1.05);
-    position: relative;
-    z-index: 10;
-}
-
-.pricing-card.popular::before {
-    content: 'LE PLUS POPULAIRE';
+    content: '✅';
     position: absolute;
-    top: -15px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #28a745; /* Success Green */
-    color: var(--white);
-    padding: 5px 15px;
-    border-radius: 50px;
-    font-size: 0.8rem;
-    font-weight: 700;
-    letter-spacing: 0.5px;
+    left: 0;
 }
 
-===========================
-   About Section
+/* =============================
+   Subscription Form Section
+   ============================= */
+.form-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-intro {
+    font-size: 1.1rem;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #555;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--text-color);
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 1rem;
+    transition: border-color var(--transition-speed);
+}
+
+.form-group input:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+/* =============================
+   About & Footer
    ============================= */
 .about-section {
-    background-color: var(--white);
     text-align: center;
-    padding: 60px 20px;
-    border-top: 1px solid #ddd;
 }
 
 .about-section p {
     max-width: 800px;
-    margin: 0 auto 1rem;
+    margin: 0 auto;
     font-size: 1.1rem;
-    color: #555;
+    line-height: 1.8;
 }
 
-/* =============================
-   Footer
-   ============================= */
 footer {
     text-align: center;
     padding: 20px;
-    background-color: var(--text-color);
-    color: var(--secondary-color);
+    background-color: #333;
+    color: #ddd;
     font-size: 0.9rem;
-    border-top: 5px solid var(--primary-color);
 }
 
 /* =============================
-   Media Queries for Responsiveness
+   Modules List Page Styles
    ============================= */
-@media (max-width: 768px) {
-    .hero {
-        height: 60vh;
-    }
-
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-
-    .hero p {
-        font-size: 1.1rem;
-    }
-
-    .sub-hero {
-        height: 30vh;
-    }
-
-    .sub-hero h1 {
-        font-size: 2.2rem;
-    }
-
-    .modules-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .section-title {
-        font-size: 1.8rem;
-    }
-   .pricing-card.popular {
-        transform: scale(1); /* Annule l'effet d'agrandissement sur mobile */
-    }
+.modules-list-section {
+    padding-top: 40px;
 }
 
+.modules-detail-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
 
+.module-detail-card {
+    padding: 35px;
+    border-left: 8px solid var(--primary-color);
+}
 
+.module-detail-card h3 {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 25px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+/* Amélioration de la lisibilité des longs textes */
+.module-detail-card p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 25px;
+    color: #444;
+}
 
 /* =============================
    Module Detail Page Styles
@@ -573,37 +415,36 @@ footer {
 
 .content-wrapper {
     flex-grow: 1;
-    display: flex;
-    flex-direction: column;
 }
 
 .section-title-small {
-    font-size: 1.4rem;
-    color: var(--primary-color);
-    border-bottom: 2px solid var(--secondary-color);
-    padding-bottom: 10px;
+    font-size: 1.5rem;
+    color: var(--text-color);
     margin-top: 30px;
     margin-bottom: 20px;
-    text-align: left;
+    border-bottom: 2px solid var(--primary-color);
+    display: inline-block;
+    padding-bottom: 5px;
 }
 
 .module-description-box {
-    width: 100%; 
-    box-sizing: border-box;
+    margin-top: 30px;
 }
 
+/* S'assure que les paragraphes générés par formatContent sont bien formatés */
 .module-description-box p {
     font-size: 1.05rem;
     line-height: 1.7;
     margin-bottom: 25px;
+    color: #444;
 }
 
 .module-image-container {
+    height: 300px;
     width: 100%;
-    min-height: 300px;
-    background-image: url('https://catalisquebec.com/wp-content/uploads/Logo_Linkedin_1200x627_300dpi_V2_EN-4mp-scaled.jpg');
-    background-color: #e9ecef;
+    background-color: #eee;
     background-size: cover;
+    background-repeat: no-repeat;
     background-position: center;
     margin-bottom: 30px;
     border-radius: 12px;
@@ -648,11 +489,12 @@ footer {
     padding: 0;
 }
 
+/* Style de la ligne principale de la sidebar */
 .info-box ul li {
     padding: 10px 0;
     border-bottom: 1px dotted #ccc;
     display: flex;
-    align-items: center;
+    align-items: flex-start; /* Changé de center à flex-start pour les listes imbriquées */
     font-size: 1rem;
 }
 
@@ -663,29 +505,66 @@ footer {
 .info-box ul li .icon {
     margin-right: 10px;
     font-size: 1.2rem;
+    flex-shrink: 0; /* Empêche l'icône de se rétrécir */
 }
 
-.secondary-cta {
-    background-color: transparent;
-    border: 2px solid var(--primary-color);
-    color: var(--primary-color);
-    box-shadow: none;
+/* Styles pour le conteneur des Activités (qui contient la sous-liste générée par createUlList) */
+#sidebar-activites {
+    flex-grow: 1;
 }
 
-.secondary-cta:hover {
-    background-color: var(--primary-color);
-    color: var(--white);
+/* Style pour la liste générée par createUlList à l'intérieur de #sidebar-activites */
+#sidebar-activites ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
 }
+
+/* Style pour les éléments de la sous-liste générée dynamiquement */
+#sidebar-activites ul li {
+    border-bottom: none;
+    padding: 2px 0;
+    font-size: 0.95rem;
+    display: list-item; /* Rétablit l'affichage normal d'un élément de liste */
+    /* Pas de puce par défaut pour les sous-listes dynamiques */
+}
+
 .next-step-section {
-    padding: 40px 20px 80px;
     text-align: center;
+    padding-top: 0;
+}
 
-/* Responsiveness for Detail Page */
-@media (max-width: 900px) {
+
+/* =============================
+   Responsive Design (Media Queries)
+   ============================= */
+@media (max-width: 1024px) {
     .module-detail-main {
         flex-direction: column;
     }
     .sidebar-info {
         width: 100%;
+        position: static;
+    }
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    .hero-content p {
+        font-size: 1.2rem;
+    }
+    section {
+        padding: 40px 15px;
+    }
+    .modules-grid {
+        grid-template-columns: 1fr;
+    }
+    .pricing-grid {
+        grid-template-columns: 1fr;
     }
 }
