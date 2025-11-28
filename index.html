@@ -1,99 +1,32 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title id="module-title">Détails du Module</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Formation Gestionnaires en Santé – Québec</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
 </head>
 <body>
-    <header id="module-header" class="sub-hero">
-        <div class="overlay"></div>
-        <div class="sub-hero-content">
-            <h1 id="module-header-title" class="fade-in"></h1>
-            <p id="module-header-subtitle" class="fade-in"></p>
-        </div>
-    </header>
+  <header class="hero">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1 id="title" class="fade-in"></h1>
+      <p id="subtitle" class="fade-in"></p>
+      <a href="page-modules.html" class="cta fade-in">En apprendre davantage</a>
+    </div>
+  </header>
 
-    <main>
-        <section class="module-detail-main">
-            <div class="content-wrapper">
-                <div id="module-image-container" class="module-image-container glass"></div>
-
-                <div class="module-description-box glass">
-                    <h2 class="section-title-small">Description Complète</h2>
-                    <div id="module-description-long"></div> 
-                    
-                    <h2 class="section-title-small">Points Clés Abordés</h2>
-                    <ul id="key-points-list" class="key-points-list"></ul>
-                </div>
-            </div>
-
-            <aside class="sidebar-info">
-                <div class="info-box glass">
-                    <h3>Informations Pratiques</h3>
-                    <ul>
-                        <li>
-                            <span class="icon">⏱️</span> 
-                            <span class="label-text">Durée du Module :</span>
-                            <span id="sidebar-duree">1h30</span>
-                        </li>
-                        
-                        <li>
-                            <span class="icon">📚</span> 
-                            <span class="label-text">Activités :</span>
-                            <div id="sidebar-activites" style="width: 100%;"></div>
-                        </li>
-                        
-                        <li>
-                            <span class="icon">💻</span> 
-                            <span class="label-text">Accès à la boite à outils :</span>
-                            <ul style="margin-top: 5px;">
-                                <li>• Cahier des participants</li>
-                                <li>• Fiches réflexives</li>
-                                <li>• Bottin d’organismes ressources</li>
-                                <li>• Capsules informatives</li>
-                                <li>• Suggestions de lecture</li>
-                                <li>• Webinaires</li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-                
-                <div class="cta-box glass">
-                    <h3>Boite à outils</h3>
-                    <a href="#inscription" class="cta" style="display:block; width:100%; box-sizing:border-box;">Accéder à la boite à outils</a>
-                </div>
-            </aside>
-        </section>
-        
-        <section class="next-step-section">
-            <h2 class="section-title">Voir les autres modules</h2>
-            <p>Explorez les autres thèmes de notre programme de formation pour une expertise complète.</p>
-            <a href="page-modules.html" class="cta secondary-cta">Programme Complet</a>
-        </section>
+  <main>
     </main>
 
-    <footer>
-        <p id="footer-text">Formation en gestion – Québec © 2025</p>
-    </footer>
+  <footer>
+    <p id="footer-text"></p>
+  </footer>
 
-    <script src="utils.js"></script>
-    <script src="script.js"></script>
-    <script>
-        // Lecture dynamique du paramètre 'module' de l'URL
-        const urlParams = new URLSearchParams(window.location.search);
-        const moduleTitle = urlParams.get('module');
-
-        // Charger le module
-        if (moduleTitle) {
-            loadModuleDetail(moduleTitle);
-        } else {
-            loadModuleDetail('Structure de la Formation'); 
-        }
-    </script>
+  <script src="utils.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
