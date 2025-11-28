@@ -117,7 +117,7 @@ section { max-width: 1200px; margin: 0 auto; padding: 60px 20px; }
 .module-card h3 { font-size: 1.4rem; color: var(--primary-color); margin-bottom: 10px; }
 
 /* =============================
-   Formulaire (Correction Layout)
+   Formulaire (Correction Layout - Problème 1)
    ============================= */
 .form-container { max-width: 600px; margin: 0 auto; }
 .form-group { margin-bottom: 20px; }
@@ -130,31 +130,82 @@ section { max-width: 1200px; margin: 0 auto; padding: 60px 20px; }
 /* CORRECTION : Texte de confidentialité sous le bouton */
 #subscription-form small {
     display: block;        /* Force le saut de ligne */
-    width: 100%;           /* Prend toute la largeur */
-    text-align: center;    /* Centre le texte */
-    margin-top: 15px;      /* Espace avec le bouton */
+    width: 100%;           
+    text-align: center;    
+    margin-top: 15px;      
     color: #6c757d;
     font-size: 0.85rem;
 }
 
 /* =============================
-   Page Détails Module (Layout)
+   Pricing (CORRECTION : Restauration du formatage des tarifs)
+   ============================= */
+.pricing-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 30px; 
+}
+.pricing-card {
+    padding: 40px; 
+    background: var(--white); 
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    transition: transform 0.3s ease;
+    text-align: center;
+}
+.pricing-card.popular { 
+    border: 3px solid var(--primary-color); 
+    transform: scale(1.03); 
+}
+.pricing-card.popular:hover { 
+    transform: scale(1.05); 
+}
+.pricing-card h3 { 
+    font-size: 1.8rem; 
+    margin-bottom: 15px; 
+}
+.pricing-card .price { 
+    font-size: 2.5rem; 
+    font-weight: 700; 
+    color: var(--primary-color); 
+    margin-bottom: 30px; 
+}
+.pricing-card ul { 
+    list-style: none; 
+    padding: 0; 
+    margin-bottom: 30px; 
+    text-align: left; 
+}
+.pricing-card ul li { 
+    padding: 10px 0 10px 20px; 
+    border-bottom: 1px dotted #ccc; 
+    position: relative; 
+    color: #555; 
+}
+.pricing-card ul li::before { 
+    content: '✅'; 
+    position: absolute; 
+    left: 0; 
+}
+
+
+/* =============================
+   Page Détails Module (Layout & Sidebar)
    ============================= */
 .module-detail-main {
     display: flex;
     max-width: 1200px;
     margin: 40px auto;
     padding: 0 20px;
-    /* CORRECTION : Augmenter l'espace entre l'image et la sidebar */
-    gap: 40px; 
+    gap: 40px; /* Plus d'espace entre les colonnes */
     align-items: flex-start;
 }
 
-/* CORRECTION : Empêcher le chevauchement de l'image */
+/* CORRECTION : Layout de la colonne principale pour éviter le chevauchement */
 .content-wrapper {
     flex-grow: 1;
     width: 100%;
-    min-width: 0; /* Important pour que l'image respecte le conteneur */
+    min-width: 0; 
 }
 
 .module-image-container {
@@ -177,11 +228,9 @@ section { max-width: 1200px; margin: 0 auto; padding: 60px 20px; }
     border-left: 5px solid var(--primary-color); border-radius: 6px;
 }
 
-/* =============================
-   Sidebar (Corrections Esthétiques)
-   ============================= */
+/* Sidebar */
 .sidebar-info {
-    width: 320px; /* Fixe la largeur pour ne pas écraser l'image */
+    width: 320px; 
     flex-shrink: 0;
     position: sticky;
     top: 20px;
@@ -190,24 +239,24 @@ section { max-width: 1200px; margin: 0 auto; padding: 60px 20px; }
 .info-box h3, .cta-box h3 { text-align: center; font-size: 1.5rem; margin-bottom: 20px; }
 .info-box ul { list-style: none; padding: 0; }
 
-/* Éléments principaux de la sidebar */
+/* CORRECTION : Éléments principaux de la sidebar */
 .info-box > ul > li {
     padding: 15px 0;
     border-bottom: 1px solid #eee;
     display: flex;
-    flex-wrap: wrap; /* CORRECTION : Permet aux listes de passer à la ligne */
+    flex-wrap: wrap; /* Permet le retour à la ligne pour les listes d'activités */
     align-items: flex-start;
 }
 
 .info-box .icon { margin-right: 12px; font-size: 1.3rem; }
 .info-box .label-text { font-weight: 600; color: var(--primary-color); margin-right: 5px; }
 
-/* CORRECTION : Sous-listes (Activités, Outils) */
+/* CORRECTION : Sous-listes (Activités, Outils) alignées proprement */
 .info-box ul ul {
-    width: 100%;           /* Prend toute la ligne suivante */
+    width: 100%;           
     margin-top: 8px;
-    padding-left: 10px;    /* Indentation */
-    border-left: 2px solid #e9ecef; /* Ligne visuelle verticale */
+    padding-left: 10px;    
+    border-left: 2px solid #e9ecef; 
 }
 
 .info-box ul ul li {
@@ -222,12 +271,12 @@ section { max-width: 1200px; margin: 0 auto; padding: 60px 20px; }
    Footer & Responsive
    ============================= */
 footer { text-align: center; padding: 20px; background: #333; color: #ddd; }
-.pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-.pricing-card { padding: 40px; background: #fff; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
-.pricing-card ul { list-style: none; padding: 0; text-align: left; }
-.pricing-card ul li::before { content: '✅'; margin-right: 10px; }
 
 @media (max-width: 1024px) {
     .module-detail-main { flex-direction: column; }
     .sidebar-info { width: 100%; position: static; }
+}
+@media (max-width: 600px) {
+    .hero-content h1 { font-size: 2.5rem; }
+    .modules-grid, .pricing-grid { grid-template-columns: 1fr; }
 }
