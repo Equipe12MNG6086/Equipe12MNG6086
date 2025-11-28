@@ -20,7 +20,45 @@
   </header>
 
   <main>
-    </main>
+    <section id="modules" class="modules-section">
+      <h2 class="section-title">Modules de formation</h2>
+      <div id="modules-container" class="modules-grid"></div>
+    </section>
+
+    <section id="inscription" class="subscribe-section">
+      <h2 class="section-title">Inscription & Contact</h2>
+      <div class="form-container glass">
+        <p class="form-intro">
+          Réservez votre place pour la prochaine session. Un gestionnaire vous contactera pour finaliser votre dossier.
+        </p>
+        <form action="#" method="GET" id="subscription-form">
+          <div class="form-group">
+            <label for="nom">Nom Complet</label>
+            <input type="text" id="nom" name="nom" required placeholder="Ex: Jean Tremblay" />
+          </div>
+          <div class="form-group">
+            <label for="email">Courriel Professionnel</label>
+            <input type="email" id="email" name="email" required placeholder="Ex: j.tremblay@cisss.qc.ca" />
+          </div>
+          <div class="form-group">
+            <label for="etablissement">Établissement/CIUSSS (Optionnel)</label>
+            <input type="text" id="etablissement" name="etablissement" placeholder="Nom de votre CISSS/CIUSSS" />
+          </div>
+          <button type="submit" class="cta submit-button">S'inscrire à la formation</button>
+          <small>Vos informations resteront confidentielles. Pas de spam.</small>
+        </form>
+      </div>
+    </section>
+    <section id="tarifs" class="pricing-section">
+      <h2 class="section-title">Nos Tarifs de Formation</h2>
+      <div id="pricing-container" class="pricing-grid">
+        </div>
+    </section>
+    <section id="apropos" class="about-section">
+      <h2 class="section-title">À propos</h2>
+      <p id="apropos-text"></p>
+    </section>
+  </main>
 
   <footer>
     <p id="footer-text"></p>
