@@ -2,8 +2,8 @@
    Custom Properties / Variables
    ============================= */
 :root {
-    --primary-color: #007bff;
-    --secondary-color: #f5f7fa;
+    --primary-color: #007bff; /* Bleu CTA */
+    --secondary-color: #f5f7fa; /* Fond clair */
     --text-color: #333;
     --white: #ffffff;
     --transition-speed: 0.3s;
@@ -20,14 +20,8 @@ body {
     color: var(--text-color);
 }
 
-h1, h2, h3 {
-    margin: 0;
-    font-weight: 700;
-}
-
-p {
-    margin: 0 0 1rem;
-}
+h1, h2, h3 { margin: 0; font-weight: 700; }
+p { margin: 0 0 1rem; }
 
 a {
     text-decoration: none;
@@ -42,17 +36,15 @@ a {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
 }
-
 .fade-in { animation: fadeIn 1s ease-out forwards; }
 .fade-in:nth-child(2) { animation-delay: 0.2s; }
-.fade-in:nth-child(3) { animation-delay: 0.4s; }
 
 /* =============================
-   Header & Hero Styles
+   Header & Hero
    ============================= */
 .hero, .sub-hero {
     position: relative;
-    height: 400px; 
+    height: 400px;
     background: url('https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2') center/cover no-repeat;
     display: flex;
     align-items: center;
@@ -64,71 +56,49 @@ a {
 .sub-hero { height: 250px; }
 
 .overlay {
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1;
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); z-index: 1;
 }
 
 .hero-content, .sub-hero-content {
-    position: relative;
-    z-index: 2;
-    padding: 20px;
-    max-width: 800px;
+    position: relative; z-index: 2; padding: 20px; max-width: 800px;
 }
 
 .hero-content h1 { font-size: 3.5rem; margin-bottom: 10px; }
 .hero-content p { font-size: 1.5rem; font-weight: 300; margin-bottom: 30px; }
 .sub-hero-content h1 { font-size: 2.5rem; }
-.sub-hero-content p { font-size: 1.1rem; }
 
 /* =============================
-   CTA & Buttons
+   Boutons (CTA)
    ============================= */
 .cta {
-    display: inline-block;
-    padding: 12px 25px;
-    background-color: var(--primary-color);
-    color: var(--white);
-    border-radius: 8px;
-    font-weight: 600;
+    display: inline-block; padding: 12px 25px;
+    background-color: var(--primary-color); color: var(--white);
+    border-radius: 8px; font-weight: 600;
     transition: background-color var(--transition-speed), transform var(--transition-speed);
-    border: none;
-    cursor: pointer;
-    text-align: center;
+    border: none; cursor: pointer; text-align: center;
 }
-
 .cta:hover { background-color: #0056b3; transform: translateY(-2px); }
 
 .secondary-cta {
-    background-color: transparent;
-    border: 2px solid var(--primary-color);
-    color: var(--primary-color);
+    background-color: transparent; border: 2px solid var(--primary-color); color: var(--primary-color);
 }
 .secondary-cta:hover { background-color: var(--primary-color); color: var(--white); }
 
-/* Submit Button Loading States */
-.submit-button { position: relative; overflow: hidden; }
-.submit-button.loading::after {
-    content: '... Chargement';
-    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-    display: flex; align-items: center; justify-content: center;
-    background-color: #0056b3; animation: pulse 1s infinite;
-}
+/* Animation bouton chargement */
+.submit-button { position: relative; overflow: hidden; width: 100%; margin-top: 10px; }
 .submit-button.success { background-color: #28a745; }
-@keyframes pulse { 0% { opacity: 0.8; } 50% { opacity: 1; } 100% { opacity: 0.8; } }
 
 /* =============================
-   Main Layout
+   Mise en page principale
    ============================= */
 main { padding-bottom: 60px; }
 section { max-width: 1200px; margin: 0 auto; padding: 60px 20px; }
 .section-title { text-align: center; font-size: 2rem; color: var(--text-color); margin-bottom: 40px; }
 
 .glass {
-    background-color: rgba(255, 255, 255, 0.95); /* Augmenté l'opacité pour la lisibilité */
-    padding: 30px;
-    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 30px; border-radius: 15px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(5px);
     border: 1px solid rgba(255, 255, 255, 0.2);
@@ -145,165 +115,119 @@ section { max-width: 1200px; margin: 0 auto; padding: 60px 20px; }
 }
 .module-card:hover { transform: translateY(-5px); box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15); }
 .module-card h3 { font-size: 1.4rem; color: var(--primary-color); margin-bottom: 10px; }
-.module-card p { color: #666; font-size: 0.95rem; }
 
 /* =============================
-   Pricing
-   ============================= */
-.pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-.pricing-card {
-    padding: 40px; background: var(--white); border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease;
-}
-.pricing-card.popular { border: 3px solid var(--primary-color); transform: scale(1.03); }
-.pricing-card.popular:hover { transform: scale(1.05); }
-.pricing-card h3 { font-size: 1.8rem; margin-bottom: 15px; }
-.pricing-card .price { font-size: 2.5rem; font-weight: 700; color: var(--primary-color); margin-bottom: 30px; }
-.pricing-card ul { list-style: none; padding: 0; margin-bottom: 30px; text-align: left; }
-.pricing-card ul li { padding: 10px 0 10px 20px; border-bottom: 1px dotted #ccc; position: relative; color: #555; }
-.pricing-card ul li::before { content: '✅'; position: absolute; left: 0; }
-
-/* =============================
-   Formulaire (CORRECTION PROBLÈME 1)
+   Formulaire (Correction Layout)
    ============================= */
 .form-container { max-width: 600px; margin: 0 auto; }
-.form-intro { font-size: 1.1rem; text-align: center; margin-bottom: 30px; color: #555; }
 .form-group { margin-bottom: 20px; }
 .form-group label { display: block; font-weight: 600; margin-bottom: 8px; }
 .form-group input {
     width: 100%; padding: 12px; border: 1px solid #ddd;
-    border-radius: 6px; box-sizing: border-box; font-size: 1rem;
+    border-radius: 6px; box-sizing: border-box;
 }
-.form-group input:focus { border-color: var(--primary-color); outline: none; }
 
-/* Le bouton prend toute la largeur */
-.submit-button { width: 100%; margin-top: 10px; }
-
-/* CORRECTION : On force le small à être en block (nouvelle ligne) */
+/* CORRECTION : Texte de confidentialité sous le bouton */
 #subscription-form small {
     display: block;        /* Force le saut de ligne */
+    width: 100%;           /* Prend toute la largeur */
     text-align: center;    /* Centre le texte */
-    margin-top: 15px;      /* Ajoute de l'espace avec le bouton */
+    margin-top: 15px;      /* Espace avec le bouton */
     color: #6c757d;
     font-size: 0.85rem;
 }
 
 /* =============================
-   Module Detail Page Styles
+   Page Détails Module (Layout)
    ============================= */
 .module-detail-main {
     display: flex;
     max-width: 1200px;
     margin: 40px auto;
     padding: 0 20px;
-    gap: 40px; /* Espace augmenté entre contenu et sidebar */
+    /* CORRECTION : Augmenter l'espace entre l'image et la sidebar */
+    gap: 40px; 
     align-items: flex-start;
 }
 
-/* CORRECTION PROBLÈME IMAGE (Layout) */
+/* CORRECTION : Empêcher le chevauchement de l'image */
 .content-wrapper {
     flex-grow: 1;
-    min-width: 0; /* Important: empêche le flex-child de déborder */
-    width: 100%;  /* S'assure qu'il prend l'espace dispo */
+    width: 100%;
+    min-width: 0; /* Important pour que l'image respecte le conteneur */
 }
-
-.module-description-box { margin-top: 30px; }
-.module-description-box p { font-size: 1.05rem; line-height: 1.7; margin-bottom: 25px; color: #444; }
 
 .module-image-container {
     height: 350px;
     width: 100%;
     background-color: #eee;
     background-size: cover;
-    background-repeat: no-repeat;
     background-position: center;
     margin-bottom: 30px;
     border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-.section-title-small {
-    font-size: 1.5rem; margin-top: 30px; margin-bottom: 20px;
-    border-bottom: 2px solid var(--primary-color); display: inline-block; padding-bottom: 5px;
+.module-description-box h2 {
+    font-size: 1.5rem; border-bottom: 2px solid var(--primary-color);
+    display: inline-block; padding-bottom: 5px; margin-top: 30px; margin-bottom: 20px;
 }
-
 .key-points-list { list-style: none; padding: 0; }
 .key-points-list li {
     background: var(--secondary-color); padding: 12px 20px; margin-bottom: 10px;
-    border-left: 5px solid var(--primary-color); border-radius: 6px; font-weight: 500;
+    border-left: 5px solid var(--primary-color); border-radius: 6px;
 }
 
 /* =============================
-   Sidebar Styles (CORRECTION PROBLÈME 3 & 4)
+   Sidebar (Corrections Esthétiques)
    ============================= */
 .sidebar-info {
-    width: 320px; /* Légèrement plus large */
+    width: 320px; /* Fixe la largeur pour ne pas écraser l'image */
     flex-shrink: 0;
     position: sticky;
     top: 20px;
 }
 
-.info-box, .cta-box { margin-bottom: 30px; }
-.info-box h3, .cta-box h3 { text-align: center; margin-top: 0; margin-bottom: 20px; font-size: 1.5rem; }
+.info-box h3, .cta-box h3 { text-align: center; font-size: 1.5rem; margin-bottom: 20px; }
 .info-box ul { list-style: none; padding: 0; }
 
-/* Styles pour les éléments principaux (icône + titre) */
+/* Éléments principaux de la sidebar */
 .info-box > ul > li {
     padding: 15px 0;
     border-bottom: 1px solid #eee;
     display: flex;
-    flex-wrap: wrap; /* Permet au contenu de passer à la ligne suivante */
+    flex-wrap: wrap; /* CORRECTION : Permet aux listes de passer à la ligne */
     align-items: flex-start;
-    font-size: 1rem;
 }
 
-.info-box > ul > li:last-child { border-bottom: none; }
+.info-box .icon { margin-right: 12px; font-size: 1.3rem; }
+.info-box .label-text { font-weight: 600; color: var(--primary-color); margin-right: 5px; }
 
-.info-box .icon {
-    margin-right: 12px;
-    font-size: 1.3rem;
-    line-height: 1;
-}
-
-/* Titre de la section (ex: "Activités :") */
-.info-box .label-text {
-    font-weight: 600;
-    margin-right: 5px;
-    color: var(--primary-color);
-}
-
-/* CORRECTION AFFICHAGE LISTES IMBRIQUÉES (Activités, Boîte à outils) */
+/* CORRECTION : Sous-listes (Activités, Outils) */
 .info-box ul ul {
-    width: 100%;           /* Force la sous-liste à prendre toute la largeur */
-    margin-top: 10px;      /* Espace au-dessus de la liste */
-    margin-bottom: 0;
-    padding-left: 10px;    /* Indentation légère */
-    border-left: 2px solid #e9ecef; /* Ligne visuelle pour la sous-liste */
+    width: 100%;           /* Prend toute la ligne suivante */
+    margin-top: 8px;
+    padding-left: 10px;    /* Indentation */
+    border-left: 2px solid #e9ecef; /* Ligne visuelle verticale */
 }
 
-/* Éléments de la sous-liste */
 .info-box ul ul li {
     padding: 4px 0 4px 10px;
     border-bottom: none;
     font-size: 0.95rem;
-    display: block; /* S'assure que c'est une liste normale */
     color: #555;
+    display: block;
 }
 
-/* Footer & Other */
-.about-section p { max-width: 800px; margin: 0 auto; }
-footer { text-align: center; padding: 20px; background-color: #333; color: #ddd; }
-.next-step-section { text-align: center; }
-
 /* =============================
-   Responsive
+   Footer & Responsive
    ============================= */
+footer { text-align: center; padding: 20px; background: #333; color: #ddd; }
+.pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+.pricing-card { padding: 40px; background: #fff; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+.pricing-card ul { list-style: none; padding: 0; text-align: left; }
+.pricing-card ul li::before { content: '✅'; margin-right: 10px; }
+
 @media (max-width: 1024px) {
     .module-detail-main { flex-direction: column; }
     .sidebar-info { width: 100%; position: static; }
-    .content-wrapper { width: 100%; }
-}
-@media (max-width: 600px) {
-    .hero-content h1 { font-size: 2.5rem; }
-    .modules-grid, .pricing-grid { grid-template-columns: 1fr; }
 }
