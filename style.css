@@ -100,17 +100,17 @@ section {
     max-width: 1200px; 
     margin: 0 auto; 
     padding: 60px 20px; 
-    text-align: center; /* CORRECTION : Centrage de tous les éléments de section (Next Step, etc.) */
+    text-align: center; /* Assure le centrage de "Voir les autres modules" */
 }
 
-/* CORRECTION : Style pour tous les titres de section (Ex: Nos Tarifs) */
+/* Style pour tous les titres de section (Ex: Modules de Formation, Nos Tarifs) */
 .section-title { 
     font-size: 2rem; 
-    color: var(--primary-color); /* CORRECTION : Couleur bleue */
+    color: var(--primary-color);
     margin-bottom: 40px; 
     font-weight: 700; 
-    border-bottom: 2px solid var(--primary-color); /* CORRECTION : Ligne bleue */
-    display: inline-block; /* Permet à la ligne de s'adapter au contenu et d'être centrée par le parent */
+    border-bottom: 2px solid var(--primary-color);
+    display: inline-block; 
     padding-bottom: 5px;
 }
 
@@ -123,7 +123,7 @@ section {
 }
 
 /* =============================
-   Modules Grid
+   Modules Grid (index.html)
    ============================= */
 .modules-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
 .module-card {
@@ -133,11 +133,66 @@ section {
 }
 .module-card:hover { transform: translateY(-5px); box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15); }
 .module-card h3 { font-size: 1.4rem; color: var(--primary-color); margin-bottom: 10px; }
-/* CORRECTION : Rétablit la couleur du texte de description en noir/gris */
 .module-card p {
-    color: var(--text-color);
+    color: var(--text-color); /* Seul le titre est en bleu */
 }
 
+/* =============================
+   Modules List Page (page-modules.html)
+   ============================= */
+
+.modules-list-section {
+    /* Utilise les styles de section standard */
+    text-align: center;
+}
+
+.modules-detail-grid {
+    display: grid;
+    grid-template-columns: 1fr; 
+    gap: 40px; /* Grande séparation entre les blocs de modules */
+    margin-top: 40px;
+}
+@media (min-width: 768px) {
+    .modules-detail-grid {
+        grid-template-columns: repeat(2, 1fr); /* Deux colonnes sur desktop */
+    }
+}
+
+.module-detail-card {
+    padding: 35px; 
+    text-align: left;
+    background-color: var(--white); 
+    border-radius: 10px;
+    border: 1px solid #e0e0e0; /* Bordure pour délimiter clairement */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    /* S'assurer que le bouton d'action est bien aligné s'il est présent */
+    display: flex;
+    flex-direction: column;
+}
+
+.module-detail-card h3 {
+    font-size: 1.6rem;
+    color: var(--primary-color); /* Titre du module en bleu */
+    margin-bottom: 15px; 
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--secondary-color); /* Ligne pour séparer le titre */
+}
+
+/* Style des listes à l'intérieur des cartes (pour le contenu DescriptionLongue) */
+.module-detail-card ul {
+    list-style: disc; 
+    padding-left: 20px;
+    margin-top: 15px;
+    flex-grow: 1; /* Permet aux listes de prendre l'espace disponible */
+}
+.module-detail-card ul li {
+    margin-bottom: 8px;
+    line-height: 1.5;
+    color: var(--text-color);
+}
+.module-detail-card .cta {
+    margin-top: auto; /* Pousse le bouton au bas de la carte */
+}
 /* =============================
    Formulaire 
    ============================= */
@@ -166,8 +221,8 @@ section {
     display: grid; 
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
     gap: 30px; 
-    align-items: stretch; /* IMPORTANT : Pour que toutes les cartes aient la même hauteur */
-    text-align: left; /* Rétablit l'alignement du contenu des cartes */
+    align-items: stretch;
+    text-align: left;
 }
 .pricing-card {
     padding: 40px; 
@@ -176,7 +231,6 @@ section {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
     transition: transform 0.3s ease;
     text-align: center;
-    /* CORRECTION : Flexbox pour aligner le bouton au bas */
     display: flex;
     flex-direction: column;
 }
@@ -202,7 +256,7 @@ section {
     padding: 0; 
     margin-bottom: 30px; 
     text-align: left; 
-    flex-grow: 1; /* Permet à la liste de prendre l'espace restant */
+    flex-grow: 1; 
 }
 .pricing-card ul li { 
     padding: 10px 0 10px 20px; 
@@ -215,13 +269,12 @@ section {
     position: absolute; 
     left: 0; 
 }
-/* CORRECTION : Positionnement du bouton CTA */
 .pricing-card .cta {
-    margin-top: auto; /* Pousse le bouton au bas du conteneur flex */
+    margin-top: auto; 
 }
 
 /* =============================
-   Page Détails Module (Layout & Sidebar)
+   Page Détails Module (module-intro.html)
    ============================= */
 .module-detail-main {
     display: flex;
@@ -230,7 +283,7 @@ section {
     padding: 0 20px;
     gap: 40px; 
     align-items: flex-start;
-    text-align: left; /* Rétablit l'alignement du contenu principal */
+    text-align: left;
 }
 
 .content-wrapper {
@@ -248,7 +301,6 @@ section {
     margin-bottom: 30px;
     border-radius: 12px;
 }
-/* Titres des sous-sections sur la page de module (ex: Description Complète) */
 .module-description-box h2 {
     font-size: 1.5rem; border-bottom: 2px solid var(--primary-color);
     display: inline-block; padding-bottom: 5px; margin-top: 30px; margin-bottom: 20px;
@@ -309,5 +361,5 @@ footer { text-align: center; padding: 20px; background: #333; color: #ddd; }
 }
 @media (max-width: 600px) {
     .hero-content h1 { font-size: 2.5rem; }
-    .modules-grid, .pricing-grid { grid-template-columns: 1fr; }
+    .modules-grid, .pricing-grid, .modules-detail-grid { grid-template-columns: 1fr; }
 }
