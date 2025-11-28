@@ -20,7 +20,10 @@ body {
     color: var(--text-color);
 }
 
-h1, h2, h3 { margin: 0; font-weight: 700; }
+h1, h2, h3 { 
+    margin: 0; 
+    font-weight: 700;
+}
 p { margin: 0 0 1rem; }
 
 a {
@@ -93,8 +96,23 @@ a {
    Mise en page principale
    ============================= */
 main { padding-bottom: 60px; }
-section { max-width: 1200px; margin: 0 auto; padding: 60px 20px; }
-.section-title { text-align: center; font-size: 2rem; color: var(--text-color); margin-bottom: 40px; }
+section { 
+    max-width: 1200px; 
+    margin: 0 auto; 
+    padding: 60px 20px; 
+    text-align: center; /* CORRECTION : Centrage de tous les éléments de section (Next Step, etc.) */
+}
+
+/* CORRECTION : Style pour tous les titres de section (Ex: Nos Tarifs) */
+.section-title { 
+    font-size: 2rem; 
+    color: var(--primary-color); /* CORRECTION : Couleur bleue */
+    margin-bottom: 40px; 
+    font-weight: 700; 
+    border-bottom: 2px solid var(--primary-color); /* CORRECTION : Ligne bleue */
+    display: inline-block; /* Permet à la ligne de s'adapter au contenu et d'être centrée par le parent */
+    padding-bottom: 5px;
+}
 
 .glass {
     background-color: rgba(255, 255, 255, 0.95);
@@ -115,9 +133,13 @@ section { max-width: 1200px; margin: 0 auto; padding: 60px 20px; }
 }
 .module-card:hover { transform: translateY(-5px); box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15); }
 .module-card h3 { font-size: 1.4rem; color: var(--primary-color); margin-bottom: 10px; }
+/* CORRECTION : Rétablit la couleur du texte de description en noir/gris */
+.module-card p {
+    color: var(--text-color);
+}
 
 /* =============================
-   Formulaire (Correction Layout - Problème 1)
+   Formulaire 
    ============================= */
 .form-container { max-width: 600px; margin: 0 auto; }
 .form-group { margin-bottom: 20px; }
@@ -127,9 +149,9 @@ section { max-width: 1200px; margin: 0 auto; padding: 60px 20px; }
     border-radius: 6px; box-sizing: border-box;
 }
 
-/* CORRECTION : Texte de confidentialité sous le bouton */
+/* Texte de confidentialité sous le bouton */
 #subscription-form small {
-    display: block;        /* Force le saut de ligne */
+    display: block; 
     width: 100%;           
     text-align: center;    
     margin-top: 15px;      
@@ -138,12 +160,14 @@ section { max-width: 1200px; margin: 0 auto; padding: 60px 20px; }
 }
 
 /* =============================
-   Pricing (CORRECTION : Restauration du formatage des tarifs)
+   Pricing (Tarifs)
    ============================= */
 .pricing-grid { 
     display: grid; 
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
     gap: 30px; 
+    align-items: stretch; /* IMPORTANT : Pour que toutes les cartes aient la même hauteur */
+    text-align: left; /* Rétablit l'alignement du contenu des cartes */
 }
 .pricing-card {
     padding: 40px; 
@@ -152,6 +176,9 @@ section { max-width: 1200px; margin: 0 auto; padding: 60px 20px; }
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
     transition: transform 0.3s ease;
     text-align: center;
+    /* CORRECTION : Flexbox pour aligner le bouton au bas */
+    display: flex;
+    flex-direction: column;
 }
 .pricing-card.popular { 
     border: 3px solid var(--primary-color); 
@@ -175,6 +202,7 @@ section { max-width: 1200px; margin: 0 auto; padding: 60px 20px; }
     padding: 0; 
     margin-bottom: 30px; 
     text-align: left; 
+    flex-grow: 1; /* Permet à la liste de prendre l'espace restant */
 }
 .pricing-card ul li { 
     padding: 10px 0 10px 20px; 
@@ -187,7 +215,10 @@ section { max-width: 1200px; margin: 0 auto; padding: 60px 20px; }
     position: absolute; 
     left: 0; 
 }
-
+/* CORRECTION : Positionnement du bouton CTA */
+.pricing-card .cta {
+    margin-top: auto; /* Pousse le bouton au bas du conteneur flex */
+}
 
 /* =============================
    Page Détails Module (Layout & Sidebar)
@@ -197,11 +228,11 @@ section { max-width: 1200px; margin: 0 auto; padding: 60px 20px; }
     max-width: 1200px;
     margin: 40px auto;
     padding: 0 20px;
-    gap: 40px; /* Plus d'espace entre les colonnes */
+    gap: 40px; 
     align-items: flex-start;
+    text-align: left; /* Rétablit l'alignement du contenu principal */
 }
 
-/* CORRECTION : Layout de la colonne principale pour éviter le chevauchement */
 .content-wrapper {
     flex-grow: 1;
     width: 100%;
@@ -217,11 +248,12 @@ section { max-width: 1200px; margin: 0 auto; padding: 60px 20px; }
     margin-bottom: 30px;
     border-radius: 12px;
 }
-
+/* Titres des sous-sections sur la page de module (ex: Description Complète) */
 .module-description-box h2 {
     font-size: 1.5rem; border-bottom: 2px solid var(--primary-color);
     display: inline-block; padding-bottom: 5px; margin-top: 30px; margin-bottom: 20px;
 }
+
 .key-points-list { list-style: none; padding: 0; }
 .key-points-list li {
     background: var(--secondary-color); padding: 12px 20px; margin-bottom: 10px;
@@ -239,19 +271,18 @@ section { max-width: 1200px; margin: 0 auto; padding: 60px 20px; }
 .info-box h3, .cta-box h3 { text-align: center; font-size: 1.5rem; margin-bottom: 20px; }
 .info-box ul { list-style: none; padding: 0; }
 
-/* CORRECTION : Éléments principaux de la sidebar */
 .info-box > ul > li {
     padding: 15px 0;
     border-bottom: 1px solid #eee;
     display: flex;
-    flex-wrap: wrap; /* Permet le retour à la ligne pour les listes d'activités */
+    flex-wrap: wrap; 
     align-items: flex-start;
 }
 
 .info-box .icon { margin-right: 12px; font-size: 1.3rem; }
 .info-box .label-text { font-weight: 600; color: var(--primary-color); margin-right: 5px; }
 
-/* CORRECTION : Sous-listes (Activités, Outils) alignées proprement */
+/* Sous-listes (Activités, Outils) */
 .info-box ul ul {
     width: 100%;           
     margin-top: 8px;
