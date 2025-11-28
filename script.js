@@ -11,10 +11,11 @@ fetch('content.json')
     container.innerHTML = '';
     
     // Définition des modules qui auront une page de détail dédiée (module-intro.html)
-    const detailedModules = [
-        "Structure de la formation", 
-        "Module 1: Se connaître comme nouveau gestionnaire"
-    ];
+    // Tous les modules ayant un contenu clé (keyPoints) seront considérés comme détaillés.
+    const detailedModules = data.modules
+        .filter(m => m.keyPoints && m.keyPoints.length > 0)
+        .map(m => m.titre);
+    
 
     data.modules.forEach(mod => {
       const card = document.createElement('a'); // La carte est un lien (<a>)
@@ -30,7 +31,7 @@ fetch('content.json')
       card.className = 'module-card fade-in';
       card.innerHTML = `
         <h3>${mod.titre}</h3>
-        <p>${mod.description}</p>
+        <p>${mod.description.replace(/\*\*\n\*\*/g, '<br>')}</p>
       `;
       container.appendChild(card);
     });
@@ -116,7 +117,7 @@ function loadModuleDetail(moduleTitle) {
             if (!module) {
                 document.getElementById('module-header-title').textContent = "Module non trouvé";
                 document.getElementById('module-header-subtitle').textContent = "Le contenu de ce module n'est pas disponible.";
-                document.getElementById('module-description-long').textContent = "Veuillez vérifier l'URL ou retourner à la liste des modules.";
+                document.getElementById('module-description-long').innerHTML = window.formatContent(["Veuillez vérifier l'URL ou retourner à la liste des modules."]);
                 document.getElementById('key-points-list').innerHTML = '';
                 return;
             }
@@ -124,57 +125,28 @@ function loadModuleDetail(moduleTitle) {
             // Mettre à jour les éléments de la page
             document.getElementById('module-title').textContent = module.titre;
             document.getElementById('module-header-title').textContent = module.titre;
-            document.getElementById('module-header-subtitle').textContent = module.description;
+            document.getElementById('module-header-subtitle').textContent = module.description.replace(/\*\*\n\*\*/g, ' ');
             
-            document.getElementById('module-description-long').textContent = module.descriptionLongue;
+            // UTILISATION DE LA NOUVELLE FONCTION POUR LE FORMATAGE
+            document.getElementById('module-description-long').innerHTML = window.formatContent(module.descriptionLongue);
             
-            // Définir les points clés spécifiques à chaque module
-            let keyPoints = [];
             
-            if (moduleTitle === "Structure de la formation") {
-                 keyPoints = [
-                    "Gestion du temps et des priorités (Urgence vs. Importance)",
-                    "Prévention de l'épuisement professionnel (Stress et saturation)",
-                    "Mobilisation d'équipe face au changement et à la pénurie",
-                    "Communication efficace en contexte de pression",
-                    "Renforcement de la confiance d'équipe"
-                ];
-            } else if (moduleTitle === "Module 1: Se connaître comme nouveau gestionnaire") {
-                 keyPoints = [
-                    "État du réseau de la santé : pénurie, surcharge, restructurations",
-                    "Les défis spécifiques du rôle de gestionnaire",
-                    "Les 7 comportements clés d’un leader efficace et comment le reconnaître",
-                    "Notions de stress (Modèle Demande- Ressource)",
-                    "Comprendre les types de gestion dans le réseau de la santé",
-                    "Questionnaire: Quel type de gestionnaire suis-je ?",
-                    "Discussion : Situation ou que le rôle dépassait les capacités",
-                    "Analyse de cas : de signes de stress chez un employé"
-                ];
-            } else {
-                // Défaut pour les autres modules
-                 keyPoints = [
-                    "Points clés en cours de préparation pour ce module."
-                ];
-            }
-
-
+            // Mise à jour des points clés
             const list = document.getElementById('key-points-list');
-            list.innerHTML = keyPoints.map(point => `<li>${point}</li>`).join('');
+            list.innerHTML = module.keyPoints ? module.keyPoints.map(point => `<li>${point}</li>`).join('') : '';
+
+            // Mise à jour de la barre latérale
+            document.getElementById('sidebar-duree').textContent = module.duree || 'N/D';
+            document.getElementById('sidebar-activites').innerHTML = window.createUlList(module.activites);
             
+
             // Afficher l'image
             const imageContainer = document.getElementById('module-image-container');
             if (module.image && module.image.startsWith('http')) {
                 imageContainer.style.backgroundImage = `url('${module.image}')`;
             } else {
-                // Image de remplacement basée sur le module
-                let placeholderImage = 'placeholder-reseau-sante.jpg';
-                if (moduleTitle.includes('Module 1')) {
-                     placeholderImage = 'placeholder-leadership.jpg';
-                } else if (moduleTitle.includes('Objectifs')) {
-                     placeholderImage = 'placeholder-goals.jpg';
-                }
-                
-                imageContainer.style.backgroundImage = `url('${placeholderImage}')`; 
+                // Utiliser une image par défaut si aucune URL n'est fournie dans le JSON
+                imageContainer.style.backgroundImage = `url('https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg')`;
             }
 
             // Footer
