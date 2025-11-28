@@ -1,70 +1,99 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Formation Gestionnaires en Santé – Québec</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title id="module-title">Détails du Module</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
 </head>
 <body>
-  <header class="hero">
-    <div class="overlay"></div>
-    <div class="hero-content">
-      <h1 id="title" class="fade-in"></h1>
-      <p id="subtitle" class="fade-in"></p>
-      <a href="page-modules.html" class="cta fade-in">En apprendre davantage</a>
-    </div>
-  </header>
-
-  <main>
-    <section id="modules" class="modules-section">
-      <h2 class="section-title">Modules de formation</h2>
-      <div id="modules-container" class="modules-grid"></div>
-    </section>
-
-    <section id="inscription" class="subscribe-section">
-      <h2 class="section-title">Inscription & Contact</h2>
-      <div class="form-container glass">
-        <p class="form-intro">
-          Réservez votre place pour la prochaine session. Un gestionnaire vous contactera pour finaliser votre dossier.
-        </p>
-        <form action="#" method="GET" id="subscription-form">
-          <div class="form-group">
-            <label for="nom">Nom Complet</label>
-            <input type="text" id="nom" name="nom" required placeholder="Ex: Jean Tremblay" />
-          </div>
-          <div class="form-group">
-            <label for="email">Courriel Professionnel</label>
-            <input type="email" id="email" name="email" required placeholder="Ex: j.tremblay@cisss.qc.ca" />
-          </div>
-          <div class="form-group">
-            <label for="etablissement">Établissement/CIUSSS (Optionnel)</label>
-            <input type="text" id="etablissement" name="etablissement" placeholder="Nom de votre CISSS/CIUSSS" />
-          </div>
-          <button type="submit" class="cta submit-button">S'inscrire à la formation</button>
-          <small>Vos informations resteront confidentielles. Pas de spam.</small>
-        </form>
-      </div>
-    </section>
-    <section id="tarifs" class="pricing-section">
-      <h2 class="section-title">Nos Tarifs de Formation</h2>
-      <div id="pricing-container" class="pricing-grid">
+    <header id="module-header" class="sub-hero">
+        <div class="overlay"></div>
+        <div class="sub-hero-content">
+            <h1 id="module-header-title" class="fade-in"></h1>
+            <p id="module-header-subtitle" class="fade-in"></p>
         </div>
-    </section>
-    <section id="apropos" class="about-section">
-      <h2 class="section-title">À propos</h2>
-      <p id="apropos-text"></p>
-    </section>
-  </main>
+    </header>
 
-  <footer>
-    <p id="footer-text"></p>
-  </footer>
+    <main>
+        <section class="module-detail-main">
+            <div class="content-wrapper">
+                <div id="module-image-container" class="module-image-container glass"></div>
 
-  <script src="utils.js"></script>
-  <script src="script.js"></script>
+                <div class="module-description-box glass">
+                    <h2 class="section-title-small">Description Complète</h2>
+                    <div id="module-description-long"></div> 
+                    
+                    <h2 class="section-title-small">Points Clés Abordés</h2>
+                    <ul id="key-points-list" class="key-points-list"></ul>
+                </div>
+            </div>
+
+            <aside class="sidebar-info">
+                <div class="info-box glass">
+                    <h3>Informations Pratiques</h3>
+                    <ul>
+                        <li>
+                            <span class="icon">⏱️</span> 
+                            <span class="label-text">Durée du Module :</span>
+                            <span id="sidebar-duree">1h30</span>
+                        </li>
+                        
+                        <li>
+                            <span class="icon">📚</span> 
+                            <span class="label-text">Activités :</span>
+                            <div id="sidebar-activites" style="width: 100%;"></div>
+                        </li>
+                        
+                        <li>
+                            <span class="icon">💻</span> 
+                            <span class="label-text">Accès à la boite à outils :</span>
+                            <ul style="margin-top: 5px;">
+                                <li>• Cahier des participants</li>
+                                <li>• Fiches réflexives</li>
+                                <li>• Bottin d’organismes ressources</li>
+                                <li>• Capsules informatives</li>
+                                <li>• Suggestions de lecture</li>
+                                <li>• Webinaires</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="cta-box glass">
+                    <h3>Boite à outils</h3>
+                    <a href="#inscription" class="cta" style="display:block; width:100%; box-sizing:border-box;">Accéder à la boite à outils</a>
+                </div>
+            </aside>
+        </section>
+        
+        <section class="next-step-section">
+            <h2 class="section-title">Voir les autres modules</h2>
+            <p>Explorez les autres thèmes de notre programme de formation pour une expertise complète.</p>
+            <a href="page-modules.html" class="cta secondary-cta">Programme Complet</a>
+        </section>
+    </main>
+
+    <footer>
+        <p id="footer-text">Formation en gestion – Québec © 2025</p>
+    </footer>
+
+    <script src="utils.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Lecture dynamique du paramètre 'module' de l'URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const moduleTitle = urlParams.get('module');
+
+        // Charger le module
+        if (moduleTitle) {
+            loadModuleDetail(moduleTitle);
+        } else {
+            loadModuleDetail('Structure de la Formation'); 
+        }
+    </script>
 </body>
 </html>
