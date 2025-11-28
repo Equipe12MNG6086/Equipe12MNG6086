@@ -27,7 +27,7 @@
 
                 <div class="module-description-box glass">
                     <h2 class="section-title-small">Description Complète</h2>
-                    <p id="module-description-long"></p>
+                    <div id="module-description-long"></div> 
                     
                     <h2 class="section-title-small">Points Clés Abordés</h2>
                     <ul id="key-points-list" class="key-points-list">
@@ -39,11 +39,21 @@
                 <div class="info-box glass">
                     <h3>Informations Pratiques</h3>
                     <ul>
-                        <li><span class="icon">⏱️</span> Durée du Module :1h30 </li>
-                        <li> </li>
-                        <li><span class="icon">📚</span> Activités : <li>-Présentation théorique <li>-Activité de réflexion individuelle <li>-Partage d’Expériences <li>-Mise en commun <li>-Atelier de reconnaissance de stress</li>
-                        <li> </li>
-                        <li><span class="icon">💻</span> Accès à la boite à outils: <li>-Cahier des participants  <li>-Fiches réflexives <li>-Bottin d’organismes ressources <li>-Capsules informatives<li>-Suggestions de lecture (Livre, article scientifique)<li>-Webinaires</li>
+                        <li><span class="icon">⏱️</span> Durée du Module :<span id="sidebar-duree">1h30</span></li>
+                        <li>
+                            <span class="icon">📚</span> Activités : 
+                            <ul id="sidebar-activites" style="margin-top: 5px;"></ul>
+                        </li>
+                        <li><span class="icon">💻</span> Accès à la boite à outils: 
+                            <ul style="margin-top: 5px;">
+                                <li>- Cahier des participants</li>
+                                <li>- Fiches réflexives</li>
+                                <li>- Bottin d’organismes ressources</li>
+                                <li>- Capsules informatives</li>
+                                <li>- Suggestions de lecture (Livre, article scientifique)</li>
+                                <li>- Webinaires</li>
+                            </ul>
+                        </li>
                     </ul>
                 </div>
                 
@@ -65,6 +75,7 @@
         <p id="footer-text">Formation en gestion – Québec © 2025</p>
     </footer>
 
+    <script src="utils.js"></script>
     <script src="script.js"></script>
     <script>
         // Lecture dynamique du paramètre 'module' de l'URL
@@ -76,7 +87,7 @@
             loadModuleDetail(moduleTitle);
         } else {
             // Option: Charger un module par défaut si l'URL est accédée directement sans paramètre
-            loadModuleDetail('Structure de la formation'); 
+            loadModuleDetail('Structure de la Formation'); // Assurez-vous que le titre par défaut est valide
         }
     </script>
 </body>
