@@ -29,6 +29,7 @@
     <p id="footer-text">Formation en gestion – Québec © 2025</p>
   </footer>
 
+  <script src="utils.js"></script> 
   <script>
     // Load module content from content.json
     fetch('content.json')
@@ -42,7 +43,7 @@
           card.className = 'module-detail-card glass fade-in';
           card.innerHTML = `
             <h3>${mod.titre}</h3>
-            <p>${mod.descriptionLongue}</p>
+            ${window.formatContent(mod.descriptionLongue)}
           `;
           container.appendChild(card);
         });
