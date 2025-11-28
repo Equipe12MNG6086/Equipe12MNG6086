@@ -6,39 +6,161 @@
   "modules": [
     {
       "titre": "Clientèle visé par la Formation",
-      "description": "Les gestionnaires en santé du Québec <li> Voir plus...</li>",
-      "descriptionLongue": "<li> Gestionnaire de la santé - secteur publique ​<li> Milieu de travail (CHSLD, hôpital, CLSC, réadaptation, etc.)​ <li> Gestionnaires cliniques nouvellement en poste de premier niveau (moins de 2 ans)​ <li> Souvent viennent d’un rôle professionnel (infirmier, travailleur social, etc.)​ <li> Haut niveau de pression et charge de travail élevé",
-      "image": "(ajouter une URL d'image ici si désiré)"
+      "description": "Les gestionnaires en santé du Québec : gestionnaires cliniques nouvellement en poste de premier niveau, haut niveau de pression. **\n** Voir plus...",
+      "descriptionLongue": [
+        "Gestionnaire de la santé - secteur publique",
+        "Milieu de travail (CHSLD, hôpital, CLSC, réadaptation, etc.)",
+        "Gestionnaires cliniques nouvellement en poste de premier niveau (moins de 2 ans)",
+        "Souvent viennent d’un rôle professionnel (infirmier, travailleur social, etc.)",
+        "Haut niveau de pression et charge de travail élevé"
+      ],
+      "keyPoints": [
+        "Définir le public cible de la formation (gestionnaires de proximité)",
+        "Décrire les contextes spécifiques du Réseau de la santé et des services sociaux (RSSS)",
+        "Identifier les défis courants liés à la transition de rôle professionnel à gestionnaire"
+      ],
+      "duree": "1h00",
+      "activites": [
+        "Présentation théorique du contexte",
+        "Partage d’Expériences (défis initiaux)",
+        "Mise en commun des réalités de terrain"
+      ],
+      "image": "https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
     },
     {
       "titre": "Structure de la Formation",
-      "description": "Durée totale de 7h30, Formation rapide et efficace, Format présentiel <li> Voir plus...</li>",
-      "descriptionLongue": "Structure Type :<li>8 h 30 – 9 h 00 : Accueil, présentation de la journée, brise-glace<li>9 h 00 – 10 h 30 : Module 1 – Se connaître comme gestionnaire (théorie + réflexion + partage d’expériences)<li>10 h 30 – 10 h 45 : Pause<li>10 h 45 – 12 h 00 : Module 2 – Gestion du temps et des priorités (outil + atelier pratique)<li>12 h 00 – 13 h 00 : Dîner<li>13 h 00 – 14 h 45 : Module 3 – Motivation et mobilisation (théorie + jeux de rôle + débriefing)<li>14 h 45 – 15 h 00 : Pause<li>15 h 00 – 15 h 45 : Atelier d’intégration – Plan d’action individuel<li>15 h 45 – 16 h 00 : Conclusion, évaluation, engagement final</li> - <li>Durée totale:  une journée de 7h30 (6h30 sans les pauses).​<li>Formation rapide et efficace.​<li>Format présentiel pour favoriser les échanges et le réseautage.</li>",
-      "image": "(ajouter une URL d'image ici si désiré)"
+      "description": "Durée totale de 7h30, Formation rapide et efficace, Format présentiel. **\n** Voir plus...",
+      "descriptionLongue": [
+        "**Déroulé Type d'une journée de 7h30 :**",
+        "8 h 30 – 9 h 00 : Accueil, présentation de la journée, brise-glace",
+        "9 h 00 – 10 h 30 : Module 1 – Se connaître comme gestionnaire (théorie + réflexion + partage d’expériences)",
+        "10 h 30 – 10 h 45 : Pause",
+        "10 h 45 – 12 h 00 : Module 2 – Gestion du temps et des priorités (outil + atelier pratique)",
+        "12 h 00 – 13 h 00 : Dîner",
+        "13 h 00 – 14 h 45 : Module 3 – Motivation et mobilisation (théorie + jeux de rôle + débriefing)",
+        "14 h 45 – 15 h 00 : Pause",
+        "15 h 00 – 15 h 45 : Atelier d’intégration – Plan d’action individuel",
+        "15 h 45 – 16 h 00 : Conclusion, évaluation, engagement final",
+        "**Informations additionnelles :**",
+        "Durée totale: une journée de 7h30 (6h30 sans les pauses).",
+        "Formation rapide et efficace.",
+        "Format présentiel pour favoriser les échanges et le réseautage."
+      ],
+      "keyPoints": [
+        "Gestion du temps et des priorités (Urgence vs. Importance)",
+        "Prévention de l'épuisement professionnel (Stress et saturation)",
+        "Mobilisation d'équipe face au changement et à la pénurie",
+        "Communication efficace en contexte de pression",
+        "Renforcement de la confiance d'équipe"
+      ],
+      "duree": "7h30 (une journée complète)",
+      "activites": [
+        "Présentation de la journée",
+        "3 Modules de formation (théorie, ateliers, jeux de rôle)",
+        "2 Pauses et 1 Dîner",
+        "Atelier d’intégration et Plan d’action individuel"
+      ],
+      "image": "https://images.pexels.com/photos/4344860/pexels-photo-4344860.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
     },
     {
       "titre": "Objectifs de la formation",
-      "description": "Assurer la productivité d’une Équipe​, Gérer son stress et son temps, Travailler efficacement​ <li> Voir plus...</li>",
-      "descriptionLongue": "<li> Gérer son temps plus efficacement <li> Prioriser ses actions selon l’urgence et l’importance <li> Prévenir l'épuisement professionnel <li> Mobiliser son équipe dans un contexte de changements et de pénurie de main d’œuvre​ <li> Communiquer efficacement en contexte de pression <li> Renforcer la relation de confiance avec les membres de son équipe​",
-      "image": "(ajouter une URL d'image ici si désiré)"
+      "description": "Assurer la productivité d’une Équipe, Gérer son stress et son temps, Travailler efficacement. **\n** Voir plus...",
+      "descriptionLongue": [
+        "Gérer son temps plus efficacement",
+        "Prioriser ses actions selon l’urgence et l’importance",
+        "Prévenir l'épuisement professionnel",
+        "Mobiliser son équipe dans un contexte de changements et de pénurie de main d’œuvre",
+        "Communiquer efficacement en contexte de pression",
+        "Renforcer la relation de confiance avec les membres de son équipe"
+      ],
+      "keyPoints": [
+        "Maîtriser les outils de gestion du temps",
+        "Identifier les facteurs de stress et d'épuisement",
+        "Développer un leadership mobilisateur et confiant",
+        "Améliorer la communication interpersonnelle"
+      ],
+      "duree": "Tout au long de la formation",
+      "activites": [
+        "Définition des objectifs en début de journée",
+        "Mises en commun et réflexions"
+      ],
+      "image": "https://images.pexels.com/photos/3184405/pexels-photo-3184405.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
     },
     {
       "titre": "Module 1: Se connaître comme nouveau gestionnaire",
-      "description": "Mieux comprendre son rôle, son impact et ses propres limites <li> Voir plus...</li>",
-      "descriptionLongue": "<li>Ce premier module permet aux gestionnaires de prendre un pas de recul afin de mieux comprendre leur rôle dans un réseau en transformation. Nous explorons les défis du RSSS, les responsabilités uniques des gestionnaires de proximité et les comportements clés d’un leadership sain et mobilisateur.</li> - <li> Grâce à des capsules théoriques, des activités d’autoévaluation et des partages d’expériences, les participants identifient leurs forces, leurs zones de vulnérabilité ainsi que les signes précurseurs du stress et de la saturation. Ils apprennent aussi à reconnaître ces signaux chez leurs employés, afin de prévenir l’épuisement avant qu'il ne s’installe.</li> - <li>L’objectif de ce module est de permettre à chaque gestionnaire de mieux se connaître, de comprendre les attentes liées à son rôle et de développer une posture de leadership alignée avec les réalités du terrain.</li>",
-      "image": "(ajouter une URL d'image ici si désiré)"
+      "description": "Mieux comprendre son rôle, son impact et ses propres limites. **\n** Voir plus...",
+      "descriptionLongue": [
+        "Ce premier module permet aux gestionnaires de prendre un pas de recul afin de mieux comprendre leur rôle dans un réseau en transformation. Nous explorons les défis du RSSS, les responsabilités uniques des gestionnaires de proximité et les comportements clés d’un leadership sain et mobilisateur.",
+        "Grâce à des capsules théoriques, des activités d’autoévaluation et des partages d’expériences, les participants identifient leurs forces, leurs zones de vulnérabilité ainsi que les signes précurseurs du stress et de la saturation. Ils apprennent aussi à reconnaître ces signaux chez leurs employés, afin de prévenir l’épuisement avant qu'il ne s’installe.",
+        "L’objectif de ce module est de permettre à chaque gestionnaire de mieux se connaître, de comprendre les attentes liées à son rôle et de développer une posture de leadership alignée avec les réalités du terrain."
+      ],
+      "keyPoints": [
+        "État du réseau de la santé : pénurie, surcharge, restructurations",
+        "Les défis spécifiques du rôle de gestionnaire (Rôle professionnel vs. Rôle de gestion)",
+        "Les 7 comportements clés d’un leader efficace et comment le reconnaître",
+        "Notions de stress (Modèle Demande- Ressource)",
+        "Comprendre les types de gestion dans le réseau de la santé",
+        "Questionnaire : Quel type de gestionnaire suis-je ?",
+        "Discussion : Situation ou que le rôle dépassait les capacités",
+        "Analyse de cas : de signes de stress chez un employé"
+      ],
+      "duree": "1h30",
+      "activites": [
+        "Présentation théorique",
+        "Activité de réflexion individuelle",
+        "Partage d’Expériences",
+        "Mise en commun",
+        "Atelier de reconnaissance de stress"
+      ],
+      "image": "https://images.pexels.com/photos/7176313/pexels-photo-7176313.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
     },
     {
       "titre": "Module 2: Gestion de temps et des priorités",
-      "description": "Des outils concrets pour reprendre le contrôle et diminuer la surcharge mentale <li> Voir plus...</li>",
-      "descriptionLongue": "<li> Ce module introduit des méthodes pratiques et éprouvées pour aider les gestionnaires à naviguer dans un environnement où tout semble urgent et où les imprévus surviennent constamment. Les participants apprennent à utiliser des outils simples, mais puissants, pour mieux organiser leur journée, prioriser efficacement et réduire leur niveau de stress opérationnel. </li> - <li> À travers des mises en pratique et des exercices d’analyse de situations réelles, ils apprennent à distinguer l’important de l’urgent, à structurer leurs tâches et à adopter des stratégies applicables dès le lendemain.</li> - <li> Ce module transforme la gestion du temps en une compétence concrète, adaptée aux contraintes des milieux cliniques.</li>",
-      "image": "(ajouter une URL d'image ici si désiré)"
+      "description": "Des outils concrets pour reprendre le contrôle et diminuer la surcharge mentale. **\n** Voir plus...",
+      "descriptionLongue": [
+        "Ce module introduit des méthodes pratiques et éprouvées pour aider les gestionnaires à naviguer dans un environnement où tout semble urgent et où les imprévus surviennent constamment. Les participants apprennent à utiliser des outils simples, mais puissants, pour mieux organiser leur journée, prioriser efficacement et réduire leur niveau de stress opérationnel.",
+        "À travers des mises en pratique et des exercices d’analyse de situations réelles, ils apprennent à distinguer l’important de l’urgent, à structurer leurs tâches et à adopter des stratégies applicables dès le lendemain.",
+        "Ce module transforme la gestion du temps en une compétence concrète, adaptée aux contraintes des milieux cliniques."
+      ],
+      "keyPoints": [
+        "La matrice Eisenhower (Urgent vs. Important)",
+        "Techniques de blocage de temps (Time Blocking)",
+        "Délégation efficace et suivi des tâches",
+        "Identification et gestion des 'voleurs de temps'",
+        "Planification des priorités hebdomadaires et quotidiennes"
+      ],
+      "duree": "1h15",
+      "activites": [
+        "Présentation théorique et outils",
+        "Atelier pratique sur la matrice d'Eisenhower",
+        "Exercice de planification de journée type",
+        "Mise en commun des stratégies"
+      ],
+      "image": "https://images.pexels.com/photos/1036808/pexels-photo-1036808.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
     },
     {
       "titre": "Module 3: Maintenir sa motivation et celle de son équipe",
-      "description": "Mobiliser, inspirer et soutenir en contexte de pénurie <li> Voir plus...</li>",
-      "descriptionLongue": "<li> Ce module est consacré à la motivation: un élément central dans un contexte où les équipes sont fragilisées, fatiguées et confrontées à une charge émotionnelle élevée. Les participants découvrent les leviers de la motivation intrinsèque, apprennent à reconnaître les facteurs qui démobilisent et développent des stratégies pour inspirer, soutenir et reconnecter leurs employés à un sens commun. </li> - <li> À travers des jeux de rôle, des mises en situation et des discussions guidées, ils pratiquent des techniques de communication qui favorisent la confiance, la clarté et l’empathie. Ils apprennent également à partager une vision mobilisatrice et à renforcer leur leadership de proximité.</li> - <li> Ce module vise à donner aux gestionnaires des outils concrets pour maintenir la santé psychologique de leurs équipes et bâtir un climat de travail plus humain, même en période de tension.</li>",
-      "image": "(ajouter une URL d'image ici si désiré)"
+      "description": "Mobiliser, inspirer et soutenir en contexte de pénurie. **\n** Voir plus...",
+      "descriptionLongue": [
+        "Ce module est consacré à la motivation: un élément central dans un contexte où les équipes sont fragilisées, fatiguées et confrontées à une charge émotionnelle élevée. Les participants découvrent les leviers de la motivation intrinsèque, apprennent à reconnaître les facteurs qui démobilisent et développent des stratégies pour inspirer, soutenir et reconnecter leurs employés à un sens commun.",
+        "À travers des jeux de rôle, des mises en situation et des discussions guidées, ils pratiquent des techniques de communication qui favorisent la confiance, la clarté et l’empathie. Ils apprennent également à partager une vision mobilisatrice et à renforcer leur leadership de proximité.",
+        "Ce module vise à donner aux gestionnaires des outils concrets pour maintenir la santé psychologique de leurs équipes et bâtir un climat de travail plus humain, même en période de tension."
+      ],
+      "keyPoints": [
+        "Les théories de la motivation (Herzberg, auto-détermination)",
+        "La reconnaissance efficace et personnalisée",
+        "Techniques de communication empathique en contexte difficile",
+        "Gestion des conflits et des émotions fortes",
+        "Développement d'une vision d'équipe mobilisatrice"
+      ],
+      "duree": "1h45",
+      "activites": [
+        "Présentation théorique et modèles de motivation",
+        "Jeux de rôle : Communication difficile",
+        "Débriefing et échanges de pratiques",
+        "Atelier sur la reconnaissance d'équipe"
+      ],
+      "image": "https://images.pexels.com/photos/1181559/pexels-photo-1181559.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
     }
   ],
   "tarifs": [
@@ -46,7 +168,7 @@
       "titre": "Forfait Individuel",
       "prix": "250 $ / pers.",
       "caracteristiques": [
-        "Pour un groupe de 20 personnnes",
+        "Pour un groupe de 20 personnes",
         "1 journée de formation (7h30)",
         "Animation par 1 formateur en salle",
         "Ateliers de simulation pratiques",
