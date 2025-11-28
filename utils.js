@@ -2,21 +2,24 @@
  * Utilitaires pour le formatage du contenu.
  */
 
-// Fonction interne pour traiter le texte (Gras et Sauts de ligne)
+// 1. Fonction pour traiter le texte (Gras et Sauts de ligne)
 function processText(text) {
     if (!text) return '';
-    // 1. Remplace **texte** par <strong>texte</strong> (Gestion du gras)
-    let processed = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
     
-    // 2. Remplace le marqueur de saut de ligne **\n** par <br>
-    processed = processed.replace(/\*\*\\n\*\*/g, '<br>'); // Cas échappé JSON
-    processed = processed.replace(/\*\*\n\*\*/g, '<br>'); // Cas direct
+    let processed = text;
+    
+    // Remplace le marqueur de saut de ligne **\n** par <br> d'abord
+    processed = processed.replace(/\*\*\\n\*\*/g, '<br>'); 
+    processed = processed.replace(/\*\*\n\*\*/g, '<br>'); 
+    
+    // CORRECTION : Remplace **texte** par <strong>texte</strong> pour le GRAS
+    processed = processed.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
     
     return processed;
 }
 
 /**
- * Crée un contenu HTML (paragraphes ou liste principale)
+ * 2. Crée le contenu principal (Paragraphes ou Liste à puces standard)
  */
 function formatContent(content) {
     if (Array.isArray(content)) {
@@ -34,8 +37,7 @@ function formatContent(content) {
 }
 
 /**
- * Crée une liste HTML propre pour la sidebar.
- * Gère automatiquement les sous-éléments commençant par tiret.
+ * 3. Crée une liste HTML propre pour la sidebar (Activités)
  */
 function createUlList(array) {
     if (!Array.isArray(array)) return '';
@@ -44,18 +46,19 @@ function createUlList(array) {
     array.forEach(item => {
         let text = processText(item);
         
-        // Si l'élément commence par un tiret (ex: "- Présentation")
+        // Nettoyage : Si l'élément commence par un tiret "-", on l'enlève pour mettre une puce propre
         if (text.trim().startsWith('-')) {
-            // On retire le tiret pour le style propre
             text = text.trim().substring(1).trim();
+            // On ajoute une puce visuelle
             html += `<li>• ${text}</li>`;
         } else {
-            html += `<li>${text}</li>`;
+            html += `<li>• ${text}</li>`;
         }
     });
     html += '</ul>';
     return html;
 }
 
+// Exposer les fonctions globalement
 window.formatContent = formatContent;
 window.createUlList = createUlList;
